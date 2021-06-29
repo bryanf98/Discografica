@@ -1,12 +1,19 @@
+package GestionDeEventos;
+
 public class VerificacionDatosDeEmpleado implements VerificacionDatos{
-    public boolean refresh(){
 
-    }
-    public boolean verificarCompletitudDatos(){
-
-    }
-    public boolean verificarDatos(){
-
+    @Override
+    public boolean refresh() {
+        return false;
     }
 
+    @Override
+    public boolean verificarCompletitudDatos() {
+        return false;
+    }
+
+    @Override
+    public boolean verificarDatos() {
+        return false;
+    }
 }
