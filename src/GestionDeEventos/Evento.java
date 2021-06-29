@@ -1,3 +1,5 @@
+import GestionDeEventos.Lugar;
+
 public class Evento {
     Fecha fecha;
     Lugar lugar;

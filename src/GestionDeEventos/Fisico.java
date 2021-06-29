@@ -1,3 +1,5 @@
+import GestionDeEventos.Lugar;
+
 public class Fisico extends Lugar {
 
     int aforo;

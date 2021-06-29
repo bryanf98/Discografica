@@ -6,7 +6,7 @@ public class Fecha {
     String mes;
     String ano;
 
-    public void seleccionaFecha()
+    public static void seleccionaFecha()
     {
         //--ano/mes/dia- 1998/08/05
         File fechas = null;
@@ -16,7 +16,7 @@ public class Fecha {
         try {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            fechas = new File ("./fechas.txt");
+            fechas = new File ("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\fechas.txt");
             fr = new FileReader (fechas);
             br = new BufferedReader(fr);
 
@@ -40,6 +40,12 @@ public class Fecha {
             }
         }
 
+    }
+
+
+
+    public static void main(String [] arg) {
+        seleccionaFecha();
     }
 
 }

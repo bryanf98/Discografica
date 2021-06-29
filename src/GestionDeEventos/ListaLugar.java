@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ListaLugar {
-    public ArrayList<Lugar> lugares = new ArrayList<Lugar>();
+    public ArrayList<Fisico> lugares = new ArrayList<Fisico>();
 
     public void agregarLugar()
     {

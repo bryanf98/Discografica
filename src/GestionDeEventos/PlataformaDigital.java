@@ -1,3 +1,5 @@
+import GestionDeEventos.Lugar;
+
 public class PlataformaDigital extends Lugar {
 
     @Override
