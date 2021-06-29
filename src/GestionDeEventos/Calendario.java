@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class Calendario {
 
-    public ArrayList<Evento> eventos;
+    public ArrayList<Evento> eventos = new ArrayList<Evento>();
 
     public void agregarEvento(){
 
