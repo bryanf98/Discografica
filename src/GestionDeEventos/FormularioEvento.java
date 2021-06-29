@@ -1,18 +1,32 @@
 package GestionDeEventos;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class FormularioEvento {
-    private String nombre;
-    private String tipoDeEvento;
-    private Date fecha;
-    private VerificacionDatos verificador;
+    String nombre;
+    String tipoDeEvento;
+    Date fecha;
+    VerificacionDatos verificador;
+    ListaLugar listaLugar;
 
 
     public boolean notificar(){
         return true;
     }
-    public void obtenerValores(){
 
+    public ArrayList obtenerValores(){
+        ArrayList datosLeidos = new ArrayList();
+        System.out.println("Ingrese el nombre del evento:");
+        Scanner sc = new Scanner(System.in);
+        datosLeidos.add(sc.nextLine());
+        System.out.println("Ingrese el tipo de evento:");
+        datosLeidos.add(sc.nextLine());
+        System.out.println("Ingrese la fecha del evento en el formato DD/MM/AAAA:");
+        datosLeidos.add(sc.nextLine());
+        System.out.println(listaLugar.mostrarLugares().toString()+"\n Escoga el número del lugar disponible:");
+        datosLeidos.add(sc.nextLine());
+        return datosLeidos;
     }
 }
