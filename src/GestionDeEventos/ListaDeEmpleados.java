@@ -1,7 +1,9 @@
 package GestionDeEventos;
 
+import java.util.ArrayList;
+
 public class ListaDeEmpleados {
-    public ArrayList<Empleado> empleados;
+    public ArrayList<Empleado> empleados= new ArrayList<Empleado>();
 
     public void agregarEmpleado()
     {
