@@ -1,10 +1,14 @@
 package GestionDeEventos;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Empleado{
 
     String nombreEmpleado;
     String cargo;
-    boolean estadoEmpleado;
+    String estadoEmpleado;
 
     public String getNombreEmpleado() {
         return nombreEmpleado;
@@ -14,7 +18,7 @@ public class Empleado{
         return cargo;
     }
 
-    public boolean isEstadoEmpleado(){
+    public String getEstadoEmpleado(){
         return estadoEmpleado;
     }
 
@@ -22,7 +26,4 @@ public class Empleado{
 
     }
 
-    public void modificarEmpleado(){
-
-    }
 }

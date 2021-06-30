@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class FormularioEmpleados {
+    public static ArrayList datosLeidos = new ArrayList();
     private String nombre;
     private String cargo;
     private String estado;
@@ -15,9 +16,10 @@ public class FormularioEmpleados {
         return true;
     }
 
+
     //retorna los valores ingresados en un array
     public ArrayList obtenerValores(){
-        ArrayList datosLeidos = new ArrayList();
+        //ArrayList datosLeidos = new ArrayList();
         System.out.println("Ingrese el nombre del empleado:");
         Scanner sc = new Scanner(System.in);
         datosLeidos.add(sc.nextLine());
