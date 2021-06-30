@@ -14,9 +14,41 @@ public class Fecha {
         String fechaSinGuion = tokenizarFechas(fecha);
         String[] fechas = obtenerFechas();
         int tamano=contarFechas();
+        boolean colocarFecha=true;
         for(int i=0;i<tamano;i++){
-            if(fechas[i].equalsIgnoreCase(fechaSinGuion)){
-                JOptionPane.showMessageDialog(null,"Esta fecha está ocupada");
+            if((fechas[i].equalsIgnoreCase(fechaSinGuion))){
+                colocarFecha=false;
+            }
+        }
+        if(colocarFecha==true){
+            insertarFecha(fecha);
+            JOptionPane.showMessageDialog(null,"Ha sido registrada la fecha en la agenda");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Esta fecha ya está agendada, elige otra");
+        }
+    }
+
+    public static void insertarFecha(String fecha){
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        try
+        {
+            fichero = new FileWriter("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\fechas.txt", true);
+            pw = new PrintWriter(fichero);
+            pw.println(fecha);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                // Nuevamente aprovechamos el finally para
+                // asegurarnos que se cierra el fichero.
+                if (null != fichero)
+                    fichero.close();
+            } catch (Exception e2) {
+                e2.printStackTrace();
             }
         }
     }
@@ -96,7 +128,7 @@ public class Fecha {
 
         public static void main(String [] arg) {
 
-            seleccionaFecha("2021-09-12");
+            seleccionaFecha("2012-05-11");
         }
     }
 

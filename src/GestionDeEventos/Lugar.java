@@ -2,9 +2,9 @@ package GestionDeEventos;
 
 public abstract class Lugar{
     String nombre;
-    //ListaDeEmpleados listaDeEmpleados;
+    ListaDeEmpleados listaDeEmpleados;
     boolean estado;
 
-    public abstract void registrarLugar();
-    public abstract void modificarLugar();
+    public abstract void registrarLugar(int aforo, String direccion, String dueno);
+    public abstract void modificarLugar(String lugar, String lugarModificado);
   }

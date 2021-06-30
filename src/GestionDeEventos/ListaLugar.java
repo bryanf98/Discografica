@@ -1,6 +1,8 @@
+package GestionDeEventos;
+
 import java.util.ArrayList;
 
-public class ListaLugar {
+public  class ListaLugar {
     public ArrayList<Fisico> lugares = new ArrayList<Fisico>();
 
     public void agregarLugar()
@@ -11,9 +13,10 @@ public class ListaLugar {
     {
 
     }
-    public void mostrarLugar()
+    public String[] mostrarLugares()
     {
-
+        String[] prueba={"1","2","3"};
+        return prueba;
     }
 
 }
