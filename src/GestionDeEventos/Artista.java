@@ -9,4 +9,9 @@ public class Artista extends Empleado {
 
     }
 
+    @Override
+    public void modificarEmpleado(){
+
+    }
+
 }
