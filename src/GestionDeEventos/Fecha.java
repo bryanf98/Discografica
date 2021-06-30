@@ -1,3 +1,5 @@
+package GestionDeEventos;
+
 import javax.swing.*;
 import java.io.*;
 import java.util.Arrays;
@@ -9,7 +11,16 @@ public class Fecha {
     String mes;
     String ano;
 
-    public  static void seleccionaFecha(String fecha)
+    public Fecha(String ano,String mes,String dia){
+        this.ano=ano;
+        this.mes=mes;
+        this.dia=dia;
+    }
+    public Fecha(){
+
+    }
+
+    public   boolean seleccionaFecha(String fecha)
     {
         String fechaSinGuion = tokenizarFechas(fecha);
         String[] fechas = obtenerFechas();
@@ -20,17 +31,18 @@ public class Fecha {
                 colocarFecha=false;
             }
         }
-        if(colocarFecha==true){
+        /*if(colocarFecha==true){
             insertarFecha(fecha);
             JOptionPane.showMessageDialog(null,"Ha sido registrada la fecha en la agenda");
         }
         else
         {
             JOptionPane.showMessageDialog(null,"Esta fecha ya está agendada, elige otra");
-        }
+        }*/
+        return colocarFecha;
     }
 
-    public static void insertarFecha(String fecha){
+    public  void insertarFecha(String fecha){
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
@@ -53,7 +65,7 @@ public class Fecha {
         }
     }
 
-    public  static int contarFechas(){
+    public   int contarFechas(){
         File documentoConFechas = null;
         FileReader fr = null;
         BufferedReader br = null;
@@ -72,9 +84,9 @@ public class Fecha {
     return lineas;
     }
 
-    public static String tokenizarFechas(String linea){
+    public  String tokenizarFechas(String linea){
         //Tokenizamos las fechas
-        StringTokenizer tokens = new StringTokenizer(linea, "-");
+        StringTokenizer tokens = new StringTokenizer(linea, "/");
         //Leemos todos los tokens encontrados por linea
         String fechaSinGuion="";
         while(tokens.hasMoreTokens()) {
@@ -84,7 +96,7 @@ public class Fecha {
         return fechaSinGuion;
     }
 
-    public  static String[] obtenerFechas() {
+    public   String[] obtenerFechas() {
         //--ano/mes/dia- 1998/08/05
         File documentoConFechas = null;
         FileReader fr = null;
@@ -126,10 +138,10 @@ public class Fecha {
         return fechas;
     }
 
-        public static void main(String [] arg) {
+        /*public static void main(String [] arg) {
 
             seleccionaFecha("2012-05-11");
-        }
+        }*/
     }
 
 
