@@ -8,14 +8,13 @@ import java.util.StringTokenizer;
 
 public class Evento {
 
-    Fecha  fecha ;
+     Fecha  fecha ;
     Lugar lugar;
-    String tipoDeEvento;
+     String tipoDeEvento;
 
-    public static void crearEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1 )
+    public  void crearEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1 )
     {
-        this.fecha=new Fecha();
-
+        fecha =new Fecha();
         if(fecha.seleccionaFecha(fecha1)==true)
         {
             insertarEvento(fecha1,aforo,direccion,dueno,tipoDeEvento1);
@@ -27,7 +26,7 @@ public class Evento {
 
     }
 
-    public static void insertarEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1)
+    public  void insertarEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1)
     {
         String evento = fecha1+"-"+aforo+"-"+direccion+"-"+dueno+"-"+tipoDeEvento1;
         FileWriter fichero = null;
@@ -54,7 +53,7 @@ public class Evento {
 
 
 
-    public static void mostrarEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1)
+    public  void mostrarEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1)
     {
         String evento = fecha1+"-"+aforo+"-"+direccion+"-"+dueno+"-"+tipoDeEvento1;
         // Fichero del que queremos leer
@@ -88,8 +87,8 @@ public class Evento {
 
 
 
-    public static void main(String [] arg) {
+    /*public static void main(String [] arg) {
 
-        insertarEvento("2010/07/11",1200,"Cuenca","Lopez Juan","Lanzamiento");
-        }
+        insertarEvento("2020/07/11",1200,"Guayas","Lopez Juan","Lanzamiento");
+        }*/
 }
