@@ -6,20 +6,20 @@ import java.io.*;
 public class ListaDeEmpleados {
     public ArrayList<Empleado> empleados;
 
-    public void agregarEmpleado()
+    public void agregarEmpleado(Empleado trabajador)
     {
-
+        empleados.add(trabajador);
     }
 
     public void mostrarEmpleado()
     {
-        File archivo = null;
-        FileReader fr = null;
-        BufferedReader br = null;
+        File archivo;
+        FileReader fr;
+        BufferedReader br;
 
         try {
             // Apertura del fichero
-            archivo = new File ("C:\\empleados.txt");
+            archivo = new File ("src/GestionDeEventos/empleados.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 

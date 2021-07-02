@@ -1,7 +1,6 @@
 package GestionDeEventos;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class FormularioEmpleados {
@@ -25,6 +24,9 @@ public class FormularioEmpleados {
         datosLeidos.add(sc.nextLine());
         System.out.println("Ingrese el cargo del empleado:");
         datosLeidos.add(sc.nextLine());
+
+        //Si el cargo es de Artista, debe preguntarse el género músical?? o de donde saco eso?
+
         datosLeidos.add("Activo");
         return datosLeidos;
     }

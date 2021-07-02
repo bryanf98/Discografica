@@ -1,8 +1,6 @@
 package GestionDeEventos;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class Empleado{
 
@@ -20,6 +18,18 @@ public class Empleado{
 
     public String getEstadoEmpleado(){
         return estadoEmpleado;
+    }
+
+    public void setNombreEmpleado(String nombre){
+        this.nombreEmpleado = nombre;
+    }
+
+    public void setCargo(String puesto){
+        this.cargo = puesto;
+    }
+
+    public void setEstadoEmpleado(String estado){
+        this.estadoEmpleado = estado;
     }
 
     public void registrarEmpleado(){

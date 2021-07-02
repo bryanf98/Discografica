@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class NoArtista extends Empleado{
 
-    public static ArrayList<Empleado> informacion = FormularioEmpleados.datosLeidos;
+    public static ArrayList <Empleado> informacion = FormularioEmpleados.datosLeidos;
     public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
 
     @Override
