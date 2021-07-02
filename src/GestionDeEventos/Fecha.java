@@ -31,14 +31,7 @@ public class Fecha {
                 colocarFecha=false;
             }
         }
-        /*if(colocarFecha==true){
-            insertarFecha(fecha);
-            JOptionPane.showMessageDialog(null,"Ha sido registrada la fecha en la agenda");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Esta fecha ya está agendada, elige otra");
-        }*/
+
         return colocarFecha;
     }
 

@@ -1,9 +1,9 @@
 package GestionDeEventos;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import javax.swing.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Calendario {
 
@@ -52,8 +52,7 @@ public class Calendario {
         BufferedReader br = null;
         int lineas=0;
         try {
-            // Apertura del fichero y creacion de BufferedReader para poder
-            // hacer una lectura comoda (disponer del metodo readLine()).
+
             documentoConFechas = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
             fr = new FileReader(documentoConFechas);
             br = new BufferedReader(fr);
@@ -64,8 +63,61 @@ public class Calendario {
 
         return lineas;
     }
-    public void mostrarEventoSegunFecha(){
 
+    public static void mostrarEventoSegunFecha(String fecha){
+
+            boolean encontrado=false;
+            File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+            
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+
+
+                String currentLine;
+                String evento = "";
+
+                while((currentLine = reader.readLine()) != null) {
+                    String fechaTokenizada = tokenizarEventos(currentLine);
+                    if(fechaTokenizada.equalsIgnoreCase(fecha)){
+                        encontrado=true;
+                        evento=currentLine.trim();
+                        break;
+                    }
+                }
+                if(encontrado==true)
+                {
+                    System.out.println(evento);
+                }
+                else
+                {
+                    System.out.println("No existe eventos en esa fecha");
+                }
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
+
+    public static String tokenizarEventos(String linea){
+        //Tokenizamos las fechas
+        StringTokenizer tokens = new StringTokenizer(linea, "-");
+        //Leemos todos los tokens encontrados por linea
+        String fecha="";
+        for(int i=0;i<1;i++){
+            fecha = fecha + tokens.nextToken();
+        }
+        /*while(tokens.hasMoreTokens()) {
+            fecha = fecha + tokens.nextToken();
+        }*/
+
+        return fecha;
+    }
+
+    /*public static void main(String [] arg) {
+
+        mostrarEventoSegunFecha("2020/07/11");
+        }*/
+
 
 }
