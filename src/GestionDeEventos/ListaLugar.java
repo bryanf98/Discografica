@@ -58,7 +58,7 @@ public  class ListaLugar {
         String[] eventos= new String[numeroDeLugares];
         int contador =0;
 
-        File fichero = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+        File fichero = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
         Scanner s = null;
         try {
             s = new Scanner(fichero);
@@ -93,7 +93,7 @@ public  class ListaLugar {
             try {
                 // Apertura del fichero y creacion de BufferedReader para poder
                 // hacer una lectura comoda (disponer del metodo readLine()).
-                documentoConFechas = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\fechas.txt");
+                documentoConFechas = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
                 fr = new FileReader(documentoConFechas);
                 br = new BufferedReader(fr);
                 lineas=(int)br.lines().count();
