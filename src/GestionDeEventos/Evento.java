@@ -11,18 +11,24 @@ public class Evento {
      Fecha  fecha ;
     Lugar lugar;
      String tipoDeEvento;
-
+    //crearEvento(Formulario form)
+    //form.fecha1
     public  void crearEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1 )
+
+            //
     {
         fecha =new Fecha();
         if(fecha.seleccionaFecha(fecha1)==true)
         {
             insertarEvento(fecha1,aforo,direccion,dueno,tipoDeEvento1);
+            System.out.println("Evento registrado exitosamente");
         }
         else
         {
-            JOptionPane.showMessageDialog(null,"La fecha está reservada, intenta con otra");
+            System.out.println("La fecha está reservada, intenta con otra");
         }
+
+
 
     }
 

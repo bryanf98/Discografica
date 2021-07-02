@@ -12,6 +12,23 @@ public class Artista extends Empleado {
     public static ArrayList <Empleado> informacion = FormularioEmpleados.datosLeidos;
     public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
 
+
+
+
+    /*registrarEmpleado(FormularioEmpleados form)
+
+    {
+        //form= new FormularioEmpleados();
+        ArrayList<String> datosEmpleado=form.obtenerValores(); //
+        this.nombreEmpleado=datosEmpleado.get(0);
+        this.estadoEmpleado=datosEmpleado.get(1);
+        this.cargo=datosEmpleado.get(2);
+        this.generoMusical=datosEmpleado.get(3);
+        System.out.println("Registrado exitosamente");
+
+    }*/
+
+
     @Override
     public void registrarEmpleado() {
         try {
