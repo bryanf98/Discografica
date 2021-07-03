@@ -13,14 +13,25 @@ public class Evento {
      String tipoDeEvento;
     //crearEvento(Formulario form)
     //form.fecha1
-    public  void crearEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1 )
-
-            //
+    public  void crearEvento(String fecha1, String direccion,String tipoDeEvento1 )
     {
+        //public  void crearEvento(FormularioEvento form )
+        //fecha1=form.fecha;
+        //aforo=form
+        //direccion=form.lugar
+        //tipoDeEvento1=form.tipoDeEvento;
+        //FormularioEvento
+        /*String nombre;
+    String tipoDeEvento;
+    Date fecha;
+    VerificacionDatos verificador;
+    ListaLugar listaLugar;*/
+
+
         fecha =new Fecha();
         if(fecha.seleccionaFecha(fecha1)==true)
         {
-            insertarEvento(fecha1,aforo,direccion,dueno,tipoDeEvento1);
+            insertarEvento(fecha1,direccion,tipoDeEvento1);
             System.out.println("Evento registrado exitosamente");
         }
         else
@@ -32,9 +43,9 @@ public class Evento {
 
     }
 
-    public  void insertarEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1)
+    public  void insertarEvento(String fecha1, String direccion,String tipoDeEvento1)
     {
-        String evento = fecha1+"-"+aforo+"-"+direccion+"-"+dueno+"-"+tipoDeEvento1;
+        String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1;
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
@@ -59,9 +70,9 @@ public class Evento {
 
 
 
-    public  void mostrarEvento(String fecha1, int aforo, String direccion, String dueno,String tipoDeEvento1)
+    public  void mostrarEvento(String fecha1, String direccion,String tipoDeEvento1)
     {
-        String evento = fecha1+"-"+aforo+"-"+direccion+"-"+dueno+"-"+tipoDeEvento1;
+        String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1;
         // Fichero del que queremos leer
         File fichero = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
         Scanner s = null;

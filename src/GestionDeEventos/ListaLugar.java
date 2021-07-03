@@ -3,8 +3,10 @@ package GestionDeEventos;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public  class ListaLugar {
     public ArrayList<Fisico> lugarFisico = new ArrayList<Fisico>();
@@ -103,5 +105,140 @@ public  class ListaLugar {
 
             return lineas;
         }
+
+
+
+    public   ArrayList mostrarLugaresDisponibles(String fecha){
+
+        ArrayList ocupados=extraerLugaresOcupadoPorFecha(fecha);
+        ArrayList disponibles = new ArrayList();
+        int tamanoOcupados=ocupados.size();
+        int contador=0;
+        boolean encontrado=false;
+        File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+
+
+            String currentLine;
+
+            while((currentLine = reader.readLine()) != null) {
+                String lugarTokenizado="";
+                if(tamanoOcupados!=0)
+                {
+                    lugarTokenizado = tokenizarLugares(currentLine);
+                    String lugaresOcupadosTokenizados=tokenizarLugares(ocupados.get(contador).toString());
+                    if(!(lugarTokenizado.equalsIgnoreCase(lugaresOcupadosTokenizados))){
+                        disponibles.add(lugarTokenizado);
+                    }
+                    else{
+                        contador++;
+                        tamanoOcupados--;
+                    }
+                }
+                else
+                {
+                    lugarTokenizado = tokenizarLugares(currentLine);
+                    disponibles.add(lugarTokenizado);
+                }
+
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return disponibles;
+    }
+
+
+    public  ArrayList extraerLugaresOcupadoPorFecha(String fecha)
+    {
+
+        File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+        ArrayList evento= new ArrayList();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            String currentLine;
+
+
+            while((currentLine = reader.readLine()) != null) {
+                if(!currentLine.equalsIgnoreCase("")) {
+                    String[] eventoTokenizada = tokenizarEventos(currentLine);
+                    if (eventoTokenizada[0].equalsIgnoreCase(fecha)) {
+
+                        evento.add(  eventoTokenizada[1]+"-" +eventoTokenizada[0] );
+                        continue;
+                    }
+                }
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return evento;
+    }
+
+
+
+    public  String[] tokenizarEventos(String linea){
+        //Tokenizamos las fechas
+        StringTokenizer tokens = new StringTokenizer(linea, "-");
+        //Leemos todos los tokens encontrados por linea
+        String fecha[]=new String[2];
+
+            try{
+                for(int i=0;i<2;i++){
+                    if(tokens.hasMoreTokens()!=false)
+                    {
+                        fecha[i] = tokens.nextToken();
+                    }
+
+                }
+            }
+            catch (ArithmeticException excepcion)
+            {
+                System.out.println("error de indece");
+            }
+
+        return fecha;
+    }
+
+
+    public  String tokenizarLugares(String linea){
+        //Tokenizamos las fechas
+        StringTokenizer tokens = new StringTokenizer(linea, "-");
+        //Leemos todos los tokens encontrados por linea
+        String fecha="";
+
+        try{
+            for(int i=0;i<1;i++){
+                if(tokens.hasMoreTokens()!=false)
+                {
+                    fecha = fecha+tokens.nextToken();
+                }
+
+            }
+        }
+        catch (ArithmeticException excepcion)
+        {
+            System.out.println("error de indece");
+        }
+
+        return fecha;
+    }
+        /*public static void main(String [] arg) {
+
+            ArrayList eventos = mostrarLugaresDisponibles("2020/07/11");
+
+            for(int i=0;i<eventos.size();i++)
+            {
+                System.out.println(eventos.get(i));
+            }
+        }*/
 
     }
