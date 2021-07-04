@@ -13,14 +13,15 @@ public class Evento {
      String tipoDeEvento;
     //crearEvento(Formulario form)
     //form.fecha1
-    public  void crearEvento(String fecha1, String direccion,String tipoDeEvento1 )
+    public  void crearEvento( FormularioEvento form)
     {
-        //public  void crearEvento(FormularioEvento form )
-        //fecha1=form.fecha;
-        //aforo=form
-        //direccion=form.lugar
-        //tipoDeEvento1=form.tipoDeEvento;
-        //FormularioEvento
+        String fecha1;
+        String direccion;
+        String tipoDeEvento1;
+        //
+        fecha1=form.fecha;
+        direccion=form.lugar;
+        tipoDeEvento1=form.tipoDeEvento;
         /*String nombre;
     String tipoDeEvento;
     Date fecha;
