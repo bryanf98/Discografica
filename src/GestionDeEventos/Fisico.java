@@ -80,7 +80,7 @@ public class Fisico extends Lugar {
 
     }
 
-    public static void copiarLugaresModificados(){
+    public  void copiarLugaresModificados(){
 
         String sourceFile="F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugaresModificar.txt" ;
         String destinationFile="F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt";

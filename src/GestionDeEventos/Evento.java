@@ -13,8 +13,7 @@ public class Evento {
      String tipoDeEvento;
      String nombre;
 
-    //crearEvento(Formulario form)
-    //form.fecha1
+
     public  void crearEvento( FormularioEvento form)
     {
         String fecha1;
