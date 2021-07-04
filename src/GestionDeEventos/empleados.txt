@@ -1,1 +1,4 @@
-2; Bruh; Activo; Productora de Espectáculos
+1;Thom Yorke; Cantante de Radiohead
+2;Bruh; Activo; Productora de Espectáculos
+3;Francisco García;CEO
+4;Pierre Dolce;Gerente de Proyectos
