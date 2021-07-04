@@ -40,7 +40,7 @@ public class Fecha {
         PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\fechas.txt", true);
+            fichero = new FileWriter("src/GestionDeEventos/fechas.txt", true);
             pw = new PrintWriter(fichero);
             pw.println(fecha);
 
@@ -66,7 +66,7 @@ public class Fecha {
         try {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            documentoConFechas = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\fechas.txt");
+            documentoConFechas = new File("src/GestionDeEventos/fechas.txt");
             fr = new FileReader(documentoConFechas);
             br = new BufferedReader(fr);
             lineas=(int)br.lines().count();
@@ -99,7 +99,7 @@ public class Fecha {
         try {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            documentoConFechas = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\fechas.txt");
+            documentoConFechas = new File("src/GestionDeEventos/fechas.txt");
             fr = new FileReader(documentoConFechas);
             br = new BufferedReader(fr);
 

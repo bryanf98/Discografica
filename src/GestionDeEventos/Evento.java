@@ -9,8 +9,10 @@ import java.util.StringTokenizer;
 public class Evento {
 
      Fecha  fecha ;
-    Lugar lugar;
+     Lugar lugar;
      String tipoDeEvento;
+     String nombre;
+
     //crearEvento(Formulario form)
     //form.fecha1
     public  void crearEvento( FormularioEvento form)
@@ -18,10 +20,12 @@ public class Evento {
         String fecha1;
         String direccion;
         String tipoDeEvento1;
+        String nombre1;
         //
         fecha1=form.fecha;
         direccion=form.lugar;
         tipoDeEvento1=form.tipoDeEvento;
+        nombre1=form.nombre;
         /*String nombre;
     String tipoDeEvento;
     Date fecha;
@@ -32,7 +36,7 @@ public class Evento {
         fecha =new Fecha();
         if(fecha.seleccionaFecha(fecha1)==true)
         {
-            insertarEvento(fecha1,direccion,tipoDeEvento1);
+            insertarEvento(fecha1,direccion,tipoDeEvento1,nombre1);
             System.out.println("Evento registrado exitosamente");
         }
         else
@@ -44,14 +48,14 @@ public class Evento {
 
     }
 
-    public  void insertarEvento(String fecha1, String direccion,String tipoDeEvento1)
+    public  void insertarEvento(String fecha1, String direccion,String tipoDeEvento1, String nombre1)
     {
-        String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1;
+        String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1+"-"+nombre1;
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt", true);
+            fichero = new FileWriter("src/GestionDeEventos/eventos.txt", true);
             pw = new PrintWriter(fichero);
             pw.println(evento);
 
@@ -71,11 +75,11 @@ public class Evento {
 
 
 
-    public  void mostrarEvento(String fecha1, String direccion,String tipoDeEvento1)
+    public  void mostrarEvento(String fecha1, String direccion,String tipoDeEvento1, String nombre1)
     {
-        String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1;
+        String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1+"-"+nombre1;
         // Fichero del que queremos leer
-        File fichero = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+        File fichero = new File("src/GestionDeEventos/eventos.txt");
         Scanner s = null;
 
         try {

@@ -19,18 +19,21 @@ public class FormularioEvento {
 
     public void obtenerValores(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la fecha del evento en el formato DD/MM/AAAA:");
+        System.out.println("Ingrese la fecha del evento en el formato AAAA/MM/DD:");
         fecha=sc.nextLine();
         notificar(fecha);
 
         System.out.println(listaLugar.mostrarLugares().toString()+"\n Escoga el número del lugar disponible:");
-        String[] lugaresDisponibles=listaLugar.mostrarLugares();
+        ArrayList lugaresDisponibles=listaLugar.mostrarLugaresDisponibles(fecha);
         String auxiliar="";
-        for (int i=0;i<lugaresDisponibles.length;i++) {
-            auxiliar+=i+". "+lugaresDisponibles[i]+"\n";
+        for (int i=0;i<lugaresDisponibles.size();i++) {
+            auxiliar+=i+". "+lugaresDisponibles.get(i).toString()+"\n";
         }
-        String lugar=sc.nextLine();
-        notificar(lugar);
+        System.out.println(auxiliar);
+        String lugarElegido=sc.nextLine();
+        notificar(lugarElegido+"");
+        lugar=lugaresDisponibles.get(Integer.parseInt(lugarElegido)).toString();
+
         System.out.println("Ingrese el nombre del evento:");
         nombre=sc.nextLine();
         notificar(nombre);

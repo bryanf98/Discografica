@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String [] arg) {
         //registrar un empleado
+
         Empleado empleado;
         FormularioEmpleados formulario = new FormularioEmpleados();
         formulario.obtenerValores();
@@ -20,10 +21,15 @@ public class Main {
             empleado=new NoArtista();
             empleado.registrarEmpleado(formulario);
         }
+
+
         //registrar un evento
+
         Evento evento=new Evento();
         FormularioEvento formularioEv = new FormularioEvento();
         formularioEv.obtenerValores();
         evento.crearEvento(formularioEv);
     }
+
+    
 }
