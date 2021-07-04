@@ -17,7 +17,7 @@ public class FormularioEmpleados {
     }
 
 
-    public void obtenerValores(){
+    public ArrayList<String> obtenerValores(){
         tipoDeEmpleado="No Artista";
         Scanner sc = new Scanner(System.in);
         System.out.println("¿El nuevo empleado es un artista? Responda \"y\" para sí o \"n\" para no");
@@ -34,6 +34,7 @@ public class FormularioEmpleados {
         System.out.println("Ingrese el cargo del empleado:");
         cargo=sc.nextLine();
         estado="Activo";
+        return null;
     }
 
     public FormularioEmpleados() {

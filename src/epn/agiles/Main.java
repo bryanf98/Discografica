@@ -1,6 +1,7 @@
 package epn.agiles;
 
 import GestionDeEventos.Artista;
+import GestionDeEventos.NoArtista;
 import GestionDeEventos.Empleado;
 import GestionDeEventos.FormularioEmpleados;
 
@@ -19,7 +20,7 @@ public class Main {
         }
         else{
             empleado=new NoArtista();
-            //empleado.registrarEmpleado(formulario);
+            empleado.registrarEmpleado(formulario);
         }
         //registrar un evento
 

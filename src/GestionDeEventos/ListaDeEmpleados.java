@@ -7,8 +7,7 @@ public class ListaDeEmpleados {
     public ArrayList<Empleado> empleados;
 
     public void agregarEmpleado(Empleado trabajador)
-    {
-        empleados.add(trabajador);
+    { empleados.add(trabajador);
     }
 
     public void mostrarEmpleado()

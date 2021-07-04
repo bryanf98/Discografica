@@ -32,7 +32,7 @@ public class Empleado{
         this.estadoEmpleado = estado;
     }
 
-    public void registrarEmpleado(){
+    public void registrarEmpleado(FormularioEmpleados formulario){
 
     }
 
