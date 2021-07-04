@@ -1,5 +1,8 @@
 package GestionDeEventos;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class VerificacionDatosDeEvento implements VerificacionDatos{
 
     @Override
@@ -8,12 +11,15 @@ public class VerificacionDatosDeEvento implements VerificacionDatos{
     }
 
     @Override
-    public boolean verificarCompletitudDatos() {
-        return false;
+    public boolean verificarCompletitudDatos(String dato) {
+        return dato.equals("");
     }
 
     @Override
-    public boolean verificarDatos() {
-        return false;
+    public boolean verificarDatos(String dato) {
+        Pattern pattern = Pattern.compile("[!¡=@#$%^&*(),.?\":{}|<>]");
+        Matcher matcher = pattern.matcher(dato);
+        return  matcher.find();
+
     }
 }

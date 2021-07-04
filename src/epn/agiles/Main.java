@@ -1,9 +1,7 @@
 package epn.agiles;
 
-import GestionDeEventos.Artista;
-import GestionDeEventos.NoArtista;
-import GestionDeEventos.Empleado;
-import GestionDeEventos.FormularioEmpleados;
+import GestionDeEventos.*;
+import jdk.jfr.Event;
 
 import java.io.*;
 
@@ -23,6 +21,9 @@ public class Main {
             empleado.registrarEmpleado(formulario);
         }
         //registrar un evento
-
+        Evento evento=new Evento();
+        FormularioEvento formularioEv = new FormularioEvento();
+        formularioEv.obtenerValores();
+        evento.crearEvento(formularioEv);
     }
 }

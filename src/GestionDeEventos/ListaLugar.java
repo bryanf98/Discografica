@@ -60,7 +60,7 @@ public  class ListaLugar {
         String[] eventos= new String[numeroDeLugares];
         int contador =0;
 
-        File fichero = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
+        File fichero = new File("src/GestionDeEventos/lugares.txt");
         Scanner s = null;
         try {
             s = new Scanner(fichero);
@@ -95,7 +95,7 @@ public  class ListaLugar {
             try {
                 // Apertura del fichero y creacion de BufferedReader para poder
                 // hacer una lectura comoda (disponer del metodo readLine()).
-                documentoConFechas = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
+                documentoConFechas = new File("src/GestionDeEventos/lugares.txt");
                 fr = new FileReader(documentoConFechas);
                 br = new BufferedReader(fr);
                 lineas=(int)br.lines().count();
@@ -115,7 +115,7 @@ public  class ListaLugar {
         int tamanoOcupados=ocupados.size();
         int contador=0;
         boolean encontrado=false;
-        File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
+        File inputFile = new File("src/GestionDeEventos/lugares.txt");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -157,7 +157,7 @@ public  class ListaLugar {
     public  ArrayList extraerLugaresOcupadoPorFecha(String fecha)
     {
 
-        File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+        File inputFile = new File("src/GestionDeEventos/eventos.txt");
         ArrayList evento= new ArrayList();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));

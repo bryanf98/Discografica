@@ -12,16 +12,18 @@ public class FormularioEmpleados {
     String generoMusical;
     VerificacionDatos verificador;
 
-    public boolean notificar(){
-        return true;
+    public boolean notificar(String dato){
+        return verificador.verificarCompletitudDatos(dato) && verificador.verificarDatos(dato);
     }
-
 
     public ArrayList<String> obtenerValores(){
         tipoDeEmpleado="No Artista";
         Scanner sc = new Scanner(System.in);
         System.out.println("¿El nuevo empleado es un artista? Responda \"y\" para sí o \"n\" para no");
         String auxiliarTipoDeEmpleado=sc.nextLine();
+        if(!notificar(auxiliarTipoDeEmpleado)){
+            return null;
+        }
 
         if(auxiliarTipoDeEmpleado.equalsIgnoreCase("y")){
             tipoDeEmpleado="Artista";
@@ -38,7 +40,7 @@ public class FormularioEmpleados {
     }
 
     public FormularioEmpleados() {
-
+        verificador=new VerificacionDatosDeEmpleado();
     }
 
     public String getNombre() {
