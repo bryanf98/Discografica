@@ -8,7 +8,10 @@ import java.io.*;
 public class Discográfica {
 
     public static void main(String [] arg) {
-        //registrar un empleado
+        //Caso de prueba 1 registrar un empleado
+	//¿El empleado es artista?:"n"
+	//Nombre:"Rick Rubin"
+	//Cargo:"Ingeniero de Sonido"
 
         Empleado empleado;
         FormularioEmpleados formulario = new FormularioEmpleados();
@@ -23,7 +26,12 @@ public class Discográfica {
         }
 
 
-        //registrar un evento
+        //Caso de prueba 2 regisrtar un evento
+	//Ingreso de datos:
+	//Fecha: "2021/09/22"
+	//Lugar:"2"
+	//Nombre de evento:"Concierto Radiohead Segunda Fecha"
+	//Tipo de Evento:"Concierto"
         Evento evento=new Evento();
         FormularioEvento formularioEv = new FormularioEvento();
         formularioEv.obtenerValores();
