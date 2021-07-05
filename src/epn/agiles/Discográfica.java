@@ -5,7 +5,7 @@ import jdk.jfr.Event;
 
 import java.io.*;
 
-public class Main {
+public class Discográfica {
 
     public static void main(String [] arg) {
         //registrar un empleado

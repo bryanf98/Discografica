@@ -1,2 +1,4 @@
 1; COMIC; Artista; Reggaeton; Activo
 2; Tom Yorke; Baterista; Rock; Activo
+3; Budy; Gestor de Redes Sociales; Activo
+4; Jose; Compositor; Activo
