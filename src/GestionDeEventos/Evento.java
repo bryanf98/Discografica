@@ -20,17 +20,11 @@ public class Evento {
         String direccion;
         String tipoDeEvento1;
         String nombre1;
-        //
+
         fecha1=form.fecha;
         direccion=form.lugar;
         tipoDeEvento1=form.tipoDeEvento;
         nombre1=form.nombre;
-        /*String nombre;
-    String tipoDeEvento;
-    Date fecha;
-    VerificacionDatos verificador;
-    ListaLugar listaLugar;*/
-
 
         fecha =new Fecha();
         if(fecha.seleccionaFecha(fecha1)==true)
@@ -42,9 +36,6 @@ public class Evento {
         {
             System.out.println("La fecha está reservada, intenta con otra");
         }
-
-
-
     }
 
     public  void insertarEvento(String fecha1, String direccion,String tipoDeEvento1, String nombre1)
@@ -107,9 +98,4 @@ public class Evento {
     }
 
 
-
-    /*public static void main(String [] arg) {
-
-        insertarEvento("2020/07/11",1200,"Guayas","Lopez Juan","Lanzamiento");
-        }*/
 }
