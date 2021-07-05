@@ -3,3 +3,4 @@
 3; Budy; Gestor de Redes Sociales; Activo
 4; Jose; Compositor; Activo
 5; Francisco García; Productor Musical; Activo
+6; Luis Vargas; Gerente; Romantico; Activo
