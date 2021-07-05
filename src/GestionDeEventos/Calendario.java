@@ -107,17 +107,8 @@ public class Calendario {
         for(int i=0;i<1;i++){
             fecha = fecha + tokens.nextToken();
         }
-        /*while(tokens.hasMoreTokens()) {
-            fecha = fecha + tokens.nextToken();
-        }*/
 
         return fecha;
     }
-
-    /*public static void main(String [] arg) {
-
-        mostrarEventoSegunFecha("2020/07/11");
-        }*/
-
 
 }

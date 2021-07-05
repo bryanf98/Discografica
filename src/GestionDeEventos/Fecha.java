@@ -131,10 +131,6 @@ public class Fecha {
         return fechas;
     }
 
-        /*public static void main(String [] arg) {
-
-            seleccionaFecha("2012-05-11");
-        }*/
     }
 
 
