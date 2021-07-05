@@ -24,7 +24,6 @@ public class Main {
 
 
         //registrar un evento
-
         Evento evento=new Evento();
         FormularioEvento formularioEv = new FormularioEvento();
         formularioEv.obtenerValores();

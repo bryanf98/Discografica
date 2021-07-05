@@ -1,4 +1,2 @@
-1;Thom Yorke; Cantante de Radiohead
-2;Bruh; Activo; Productora de Espectáculos
-3;Francisco García;CEO
-4;Pierre Dolce;Gerente de Proyectos
+1; COMIC; Artista; Reggaeton; Activo
+2; Tom Yorke; Baterista; Rock; Activo
