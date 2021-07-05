@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
 public  class ListaLugar {
     public ArrayList<Fisico> lugarFisico = new ArrayList<Fisico>();
     public ArrayList<PlataformaDigital> lugarDigital = new ArrayList<PlataformaDigital>();
+
     public void agregarLugar(Lugar lugar, String tipo)
     {
         if(tipo.equalsIgnoreCase("fisico"))
@@ -27,6 +28,7 @@ public  class ListaLugar {
         }
 
     }
+
     public void quitarLugar(Lugar lugar, String tipo, String nombre) {
         if (tipo.equalsIgnoreCase("fisico")) {
 
