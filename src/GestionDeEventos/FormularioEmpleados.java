@@ -13,10 +13,12 @@ public class FormularioEmpleados {
     VerificacionDatos verificador;
 
     public boolean notificar(String dato){
-        return verificador.verificarCompletitudDatos(dato) && verificador.verificarDatos(dato);
+        boolean verificadorCompletitudDatos=verificador.verificarCompletitudDatos(dato);
+        boolean verificadorDatos=verificador.verificarDatos(dato);
+        return verificadorCompletitudDatos && verificadorDatos;
     }
 
-    public ArrayList<String> obtenerValores(){
+    public void obtenerValores(){
         tipoDeEmpleado="No Artista";
         Scanner sc = new Scanner(System.in);
         System.out.println("¿El nuevo empleado es un artista? Responda \"y\" para sí o \"n\" para no");
@@ -34,7 +36,6 @@ public class FormularioEmpleados {
         System.out.println("Ingrese el cargo del empleado:");
         cargo=sc.nextLine();
         estado="Activo";
-        return null;
     }
 
     public FormularioEmpleados() {

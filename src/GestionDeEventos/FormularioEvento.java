@@ -14,7 +14,9 @@ public class FormularioEvento {
 
 
     public boolean notificar(String dato){
-        return verificador.verificarCompletitudDatos(dato) && verificador.verificarDatos(dato);
+        boolean verificadorCompletitudDatos=verificador.verificarCompletitudDatos(dato);
+        boolean verificadorDatos=verificador.verificarDatos(dato);
+        return verificadorCompletitudDatos && verificadorDatos;
     }
 
     public void obtenerValores(){

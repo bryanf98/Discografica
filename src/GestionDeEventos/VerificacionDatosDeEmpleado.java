@@ -12,6 +12,7 @@ public class VerificacionDatosDeEmpleado implements VerificacionDatos{
 
     @Override
     public boolean verificarCompletitudDatos(String dato) {
+
         return dato.equals("");
     }
 
