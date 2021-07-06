@@ -15,7 +15,6 @@ public class ListaDeEmpleados {
         File archivo;
         FileReader fr;
         BufferedReader br;
-
         try {
             // Apertura del fichero
             archivo = new File ("src/GestionDeEventos/empleados.txt");
