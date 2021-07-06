@@ -1,12 +1,12 @@
 package GestionDeEventos;
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Calendario {
-
+    Tokenizador token = new Tokenizador();
+    Contador conta = new Contador();
     public ArrayList<Evento> eventos = new ArrayList<Evento>();
 
     public void agregarEvento(Evento evento){
@@ -16,7 +16,7 @@ public class Calendario {
         eventos.remove(evento);
     }
     public String[] mostrarEventos(){
-        int numeroDeEventos= contarEventos();
+        int numeroDeEventos=conta.contarEventos();
         String[] eventos= new String[numeroDeEventos];
         int contador =0;
 
@@ -45,7 +45,7 @@ public class Calendario {
 
     }
 
-    private int contarEventos() {
+    /*public int contarEventos() {
 
         File documentoConFechas = null;
         FileReader fr = null;
@@ -62,9 +62,9 @@ public class Calendario {
         }
 
         return lineas;
-    }
+    }*/
 
-    public static void mostrarEventoSegunFecha(String fecha){
+    public  void mostrarEventoSegunFecha(String fecha){
 
             boolean encontrado=false;
             File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
@@ -77,7 +77,7 @@ public class Calendario {
                 String evento = "";
 
                 while((currentLine = reader.readLine()) != null) {
-                    String fechaTokenizada = tokenizarEventos(currentLine);
+                    String fechaTokenizada = token.tokenizarEventosTomarFecha(currentLine);
                     if(fechaTokenizada.equalsIgnoreCase(fecha)){
                         encontrado=true;
                         evento=currentLine.trim();
@@ -99,7 +99,7 @@ public class Calendario {
             }
     }
 
-    public static String tokenizarEventos(String linea){
+    /*public  String tokenizarEventosTomarFecha(String linea){
         //Tokenizamos las fechas
         StringTokenizer tokens = new StringTokenizer(linea, "-");
         //Leemos todos los tokens encontrados por linea
@@ -109,6 +109,6 @@ public class Calendario {
         }
 
         return fecha;
-    }
+    }*/
 
 }

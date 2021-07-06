@@ -11,6 +11,8 @@ public class Fecha {
     String mes;
     String ano;
 
+    Tokenizador token = new Tokenizador();
+
     public Fecha(String ano,String mes,String dia){
         this.ano=ano;
         this.mes=mes;
@@ -22,7 +24,7 @@ public class Fecha {
 
     public   boolean seleccionaFecha(String fecha)
     {
-        String fechaSinGuion = tokenizarFechas(fecha);
+        String fechaSinGuion = token.tokenizarFechas(fecha);
         String[] fechas = obtenerFechas();
         int tamano=contarFechas();
         boolean colocarFecha=true;
@@ -77,7 +79,7 @@ public class Fecha {
     return lineas;
     }
 
-    public  String tokenizarFechas(String linea){
+    /*public  String tokenizarFechas(String linea){
         //Tokenizamos las fechas
         StringTokenizer tokens = new StringTokenizer(linea, "/");
         //Leemos todos los tokens encontrados por linea
@@ -87,7 +89,7 @@ public class Fecha {
         }
 
         return fechaSinGuion;
-    }
+    }*/
 
     public   String[] obtenerFechas() {
         //--ano/mes/dia- 1998/08/05
@@ -109,7 +111,7 @@ public class Fecha {
             int contador=0;
             while ((linea = br.readLine()) != null) {
 
-                String fechaSinGuion=tokenizarFechas(linea);
+                String fechaSinGuion=token.tokenizarFechas(linea);
                 //agregamos los tokens a el arreglo de fechas
                 fechas[contador]=fechaSinGuion;
                 contador++;

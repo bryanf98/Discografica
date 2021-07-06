@@ -9,6 +9,8 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public  class ListaLugar {
+    Tokenizador token = new Tokenizador();
+    Contador conta = new Contador();
     public ArrayList<Fisico> lugarFisico = new ArrayList<Fisico>();
     public ArrayList<PlataformaDigital> lugarDigital = new ArrayList<PlataformaDigital>();
 
@@ -58,7 +60,7 @@ public  class ListaLugar {
     public  String[] mostrarLugares()
     {
 
-        int numeroDeLugares=contarLugares();
+        int numeroDeLugares=conta.contarLugares();
         String[] eventos= new String[numeroDeLugares];
         int contador =0;
 
@@ -88,7 +90,7 @@ public  class ListaLugar {
 
 
 
-    private int contarLugares() {
+    /*public int contarLugares() {
 
             File documentoConFechas = null;
             FileReader fr = null;
@@ -106,7 +108,7 @@ public  class ListaLugar {
             }
 
             return lineas;
-        }
+        }*/
 
 
 
@@ -129,8 +131,8 @@ public  class ListaLugar {
                 String lugarTokenizado="";
                 if(tamanoOcupados!=0)
                 {
-                    lugarTokenizado = tokenizarLugares(currentLine);
-                    String lugaresOcupadosTokenizados=tokenizarLugares(ocupados.get(contador).toString());
+                    lugarTokenizado = token.tokenizarLugares(currentLine);
+                    String lugaresOcupadosTokenizados=token.tokenizarLugares(ocupados.get(contador).toString());
                     if(!(lugarTokenizado.equalsIgnoreCase(lugaresOcupadosTokenizados))){
                         disponibles.add(lugarTokenizado);
                     }
@@ -141,7 +143,7 @@ public  class ListaLugar {
                 }
                 else
                 {
-                    lugarTokenizado = tokenizarLugares(currentLine);
+                    lugarTokenizado = token.tokenizarLugares(currentLine);
                     disponibles.add(lugarTokenizado);
                 }
 
@@ -168,7 +170,7 @@ public  class ListaLugar {
 
             while((currentLine = reader.readLine()) != null) {
                 if(!currentLine.equalsIgnoreCase("")) {
-                    String[] eventoTokenizada = tokenizarEventos(currentLine);
+                    String[] eventoTokenizada = token.tokenizarEventos(currentLine);
                     if (eventoTokenizada[0].equalsIgnoreCase(fecha)) {
 
                         evento.add(  eventoTokenizada[1]+"-" +eventoTokenizada[0] );
@@ -187,7 +189,7 @@ public  class ListaLugar {
 
 
 
-    public  String[] tokenizarEventos(String linea){
+    /*public  String[] tokenizarEventos(String linea){
         //Tokenizamos las fechas
         StringTokenizer tokens = new StringTokenizer(linea, "-");
         //Leemos todos los tokens encontrados por linea
@@ -208,10 +210,10 @@ public  class ListaLugar {
             }
 
         return fecha;
-    }
+    }*/
 
 
-    public  String tokenizarLugares(String linea){
+   /* public  String tokenizarLugares(String linea){
         //Tokenizamos las fechas
         StringTokenizer tokens = new StringTokenizer(linea, "-");
         //Leemos todos los tokens encontrados por linea
@@ -232,7 +234,7 @@ public  class ListaLugar {
         }
 
         return fecha;
-    }
+    }*/
         /*public static void main(String [] arg) {
 
             ArrayList eventos = mostrarLugaresDisponibles("2020/07/11");
