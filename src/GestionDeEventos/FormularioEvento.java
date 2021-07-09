@@ -27,11 +27,7 @@ public class FormularioEvento {
 
         System.out.println(listaLugar.mostrarLugares().toString()+"\n Escoga el número del lugar disponible:");
         ArrayList lugaresDisponibles=listaLugar.mostrarLugaresDisponibles(fecha);
-        String auxiliar="";
-        for (int i=0;i<lugaresDisponibles.size();i++) {
-            auxiliar+=i+". "+lugaresDisponibles.get(i).toString()+"\n";
-        }
-        System.out.println(auxiliar);
+        System.out.println(obtenerListaEnStringPresentacion(lugaresDisponibles))
         String lugarElegido=sc.nextLine();
         notificar(lugarElegido+"");
         lugar=lugaresDisponibles.get(Integer.parseInt(lugarElegido)).toString();
@@ -44,6 +40,14 @@ public class FormularioEvento {
         tipoDeEvento=sc.nextLine();
         notificar(tipoDeEvento);
 
+    }
+
+    private String obtenerListaEnStringPresentacion(ArrayList lugaresDisponibles) {
+        String auxiliar="";
+        for (int i = 0; i< lugaresDisponibles.size(); i++) {
+            auxiliar +=i+". "+ lugaresDisponibles.get(i).toString()+"\n";
+        }
+        return auxiliar;
     }
 
     public FormularioEvento() {
