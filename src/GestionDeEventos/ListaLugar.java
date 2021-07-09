@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 
 public  class ListaLugar {
     Tokenizador token = new Tokenizador();
+
     Contador conta = new Contador();
     public ArrayList<Fisico> lugarFisico = new ArrayList<Fisico>();
     public ArrayList<PlataformaDigital> lugarDigital = new ArrayList<PlataformaDigital>();
@@ -59,12 +60,11 @@ public  class ListaLugar {
 
     public  String[] mostrarLugares()
     {
-
-        int numeroDeLugares=conta.contarLugares();
+        String path=  "src/GestionDeEventos/lugares.txt";
+        int numeroDeLugares=conta.contarLineas(path);
         String[] eventos= new String[numeroDeLugares];
         int contador =0;
-
-        File fichero = new File("src/GestionDeEventos/lugares.txt");
+        File fichero = new File(path);
         Scanner s = null;
         try {
             s = new Scanner(fichero);

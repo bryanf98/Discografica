@@ -56,16 +56,5 @@ public class Tokenizador {
         return fecha;
     }
 
-    public String tokenizarEventosTomarFecha(String linea) {
-        //Tokenizamos las fechas
-        StringTokenizer tokens = new StringTokenizer(linea, "-");
-        //Leemos todos los tokens encontrados por linea
-        String fecha = "";
-        for (int i = 0; i < 1; i++) {
-            fecha = fecha + tokens.nextToken();
-        }
 
-        return fecha;
-
-    }
 }

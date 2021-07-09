@@ -2,7 +2,6 @@ package GestionDeEventos;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Calendario {
     Tokenizador token = new Tokenizador();
@@ -16,11 +15,12 @@ public class Calendario {
         eventos.remove(evento);
     }
     public String[] mostrarEventos(){
-        int numeroDeEventos=conta.contarEventos();
+        String path = "src/GestionDeEventos/eventos.txt";
+        int numeroDeEventos=conta.contarLineas(path);
         String[] eventos= new String[numeroDeEventos];
         int contador =0;
 
-        File fichero = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+        File fichero = new File("src/GestionDeEventos/eventos.txt");
         Scanner s = null;
         try {
             s = new Scanner(fichero);
@@ -77,7 +77,7 @@ public class Calendario {
                 String evento = "";
 
                 while((currentLine = reader.readLine()) != null) {
-                    String fechaTokenizada = token.tokenizarEventosTomarFecha(currentLine);
+                    String fechaTokenizada = token.tokenizarLugares(currentLine);
                     if(fechaTokenizada.equalsIgnoreCase(fecha)){
                         encontrado=true;
                         evento=currentLine.trim();
