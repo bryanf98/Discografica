@@ -15,6 +15,8 @@ public  class ListaLugar {
     public ArrayList<Fisico> lugarFisico = new ArrayList<Fisico>();
     public ArrayList<PlataformaDigital> lugarDigital = new ArrayList<PlataformaDigital>();
 
+    public ArrayList<Lugar> listaLugares;
+
     public void agregarLugar(Lugar lugar, String tipo)
     {
         if(tipo.equalsIgnoreCase("fisico"))
@@ -87,29 +89,6 @@ public  class ListaLugar {
 
         return eventos;
     }
-
-
-
-    /*public int contarLugares() {
-
-            File documentoConFechas = null;
-            FileReader fr = null;
-            BufferedReader br = null;
-            int lineas=0;
-            try {
-                // Apertura del fichero y creacion de BufferedReader para poder
-                // hacer una lectura comoda (disponer del metodo readLine()).
-                documentoConFechas = new File("src/GestionDeEventos/lugares.txt");
-                fr = new FileReader(documentoConFechas);
-                br = new BufferedReader(fr);
-                lineas=(int)br.lines().count();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return lineas;
-        }*/
-
 
 
     public   ArrayList mostrarLugaresDisponibles(String fecha){
@@ -187,62 +166,5 @@ public  class ListaLugar {
         return evento;
     }
 
-
-
-    /*public  String[] tokenizarEventos(String linea){
-        //Tokenizamos las fechas
-        StringTokenizer tokens = new StringTokenizer(linea, "-");
-        //Leemos todos los tokens encontrados por linea
-        String fecha[]=new String[2];
-
-            try{
-                for(int i=0;i<2;i++){
-                    if(tokens.hasMoreTokens()!=false)
-                    {
-                        fecha[i] = tokens.nextToken();
-                    }
-
-                }
-            }
-            catch (ArithmeticException excepcion)
-            {
-                System.out.println("error de indece");
-            }
-
-        return fecha;
-    }*/
-
-
-   /* public  String tokenizarLugares(String linea){
-        //Tokenizamos las fechas
-        StringTokenizer tokens = new StringTokenizer(linea, "-");
-        //Leemos todos los tokens encontrados por linea
-        String fecha="";
-
-        try{
-            for(int i=0;i<1;i++){
-                if(tokens.hasMoreTokens()!=false)
-                {
-                    fecha = fecha+tokens.nextToken();
-                }
-
-            }
-        }
-        catch (ArithmeticException excepcion)
-        {
-            System.out.println("error de indece");
-        }
-
-        return fecha;
-    }*/
-        /*public static void main(String [] arg) {
-
-            ArrayList eventos = mostrarLugaresDisponibles("2020/07/11");
-
-            for(int i=0;i<eventos.size();i++)
-            {
-                System.out.println(eventos.get(i));
-            }
-        }*/
 
     }
