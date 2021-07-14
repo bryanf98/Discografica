@@ -27,7 +27,7 @@ public class FormularioEvento {
 
         System.out.println(listaLugar.mostrarLugares().toString()+"\n Escoga el número del lugar disponible:");
         ArrayList lugaresDisponibles=listaLugar.mostrarLugaresDisponibles(fecha);
-        System.out.println(obtenerListaEnStringPresentacion(lugaresDisponibles))
+        System.out.println(obtenerListaEnStringPresentacion(lugaresDisponibles));
         String lugarElegido=sc.nextLine();
         notificar(lugarElegido+"");
         lugar=lugaresDisponibles.get(Integer.parseInt(lugarElegido)).toString();
