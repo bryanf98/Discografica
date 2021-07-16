@@ -60,17 +60,29 @@ public  class ListaLugar {
 
 
 
-    public   ArrayList mostrarLugares()
+    //public   ArrayList mostrarLugares() este es la definicion de la funcionalidad que no sé
+    public   String mostrarLugares()
     {
         String path=  "src/main/java/GestionDeEventos/lugares.txt";
         ArrayList eventos= new ArrayList();
+        ArrayList<Lugar> lugares= new ArrayList<Lugar>();
+        String lugaresLinea= "";
         File fichero = new File(path);
         Scanner s = null;
         try {
             s = new Scanner(fichero);
+            StringTokenizer tokens;
             while (s.hasNextLine()) {
-                eventos.add(s.nextLine());
-                //eventos.get(1).
+                lugaresLinea=s.nextLine();
+                //eventos.add(lugaresLinea);//no se que hace esto
+
+                tokens = new StringTokenizer(lugaresLinea, "-");
+                ArrayList aux = new ArrayList();
+                while (tokens.hasMoreTokens()) {
+                    aux.add(tokens.nextToken());
+                }
+                Lugar lugar = new Fisico(aux.get(0).toString(),Integer.parseInt(aux.get(1).toString()));
+                lugares.add(lugar);
             }
         } catch (Exception ex) {
             System.out.println("Mensaje: " + ex.getMessage());
@@ -83,8 +95,12 @@ public  class ListaLugar {
                 System.out.println("Mensaje 2: " + ex2.getMessage());
             }
         }
-
-        return eventos;
+        String lugaresARetornar="";
+        for(Lugar lugar:lugares){
+            lugaresARetornar+=" " +lugar.mostrarLugar()+"\n";
+        }
+        //return eventos;//este retorno hace la funcionalidad que no cacho
+        return lugaresARetornar;
     }
 
 

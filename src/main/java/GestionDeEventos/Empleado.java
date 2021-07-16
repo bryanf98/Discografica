@@ -7,10 +7,12 @@ public class Empleado{
     String nombreEmpleado;
     String cargo;
     String estadoEmpleado;
-    public Empleado(String nombreEmpleado, String cargo, String estadoEmpleado) {
+    int idLugar;
+    public Empleado(String nombreEmpleado, String cargo, String estadoEmpleado,int idLugar) {
         this.nombreEmpleado=nombreEmpleado;
         this.cargo=cargo;
         this.estadoEmpleado=estadoEmpleado;
+        this.idLugar=idLugar;
     }
 
     public Empleado(){}

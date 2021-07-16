@@ -10,8 +10,8 @@ public class Artista extends Empleado{
 
     String generomusical;
 
-    public Artista(String generomusical,String nombreEmpleado, String cargo, String estadoEmpleado) {
-        super(nombreEmpleado,cargo,estadoEmpleado);
+    public Artista(String generomusical,String nombreEmpleado, String cargo, String estadoEmpleado,int idLugar) {
+        super(nombreEmpleado,cargo,estadoEmpleado,idLugar);
         this.generomusical=generomusical;
     }
 

@@ -11,6 +11,13 @@ public class Fisico extends Lugar {
     String direccion;
     String dueno;
 
+    public Fisico(String nombre, int id) {
+        super(nombre, id);
+    }
+    public Fisico(){
+        super();
+    }
+
     @Override
     public void registrarLugar(int aforo, String direccion, String dueno) {
 

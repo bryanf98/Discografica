@@ -10,11 +10,9 @@ public class Discográfica {
     public static void main(String [] arg) {
         //Caso de prueba 3 mostrar lugares con empleados
         ListaLugar lugar = new ListaLugar();
-        lugar.
+        System.out.println(lugar.mostrarLugares());
 
-
-
-
+/*
 
 
         //Caso de prueba 1 registrar un empleado
@@ -22,7 +20,7 @@ public class Discográfica {
 	//Nombre:"Rick Rubin"
 	//Cargo:"Ingeniero de Sonido"
 
-        //Empleado empleado;
+        Empleado empleado;
         FormularioEmpleados formulario = new FormularioEmpleados();
         formulario.obtenerValores();
         if(formulario.getTipoDeEmpleado().equals("Artista")){
@@ -45,6 +43,10 @@ public class Discográfica {
         FormularioEvento formularioEv = new FormularioEvento();
         formularioEv.obtenerValores();
         evento.crearEvento(formularioEv);
+
+
+
+ */
     }
 
 

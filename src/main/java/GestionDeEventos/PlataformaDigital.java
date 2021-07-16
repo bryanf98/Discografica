@@ -7,6 +7,14 @@ import java.io.*;
 
 public class PlataformaDigital extends Lugar {
 
+    public PlataformaDigital(String nombre, int id) {
+        super(nombre, id);
+    }
+    public PlataformaDigital(){
+        super();
+    }
+
+
     @Override
     public void registrarLugar(int aforo, String direccion, String dueno) {
 

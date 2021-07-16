@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class NoArtista extends Empleado{
 
-    public NoArtista(String nombreEmpleado, String cargo, String estadoEmpleado) {
-        super(nombreEmpleado,cargo,estadoEmpleado);
+    public NoArtista(String nombreEmpleado, String cargo, String estadoEmpleado,int idLugar) {
+        super(nombreEmpleado,cargo,estadoEmpleado,idLugar);
     }
     public NoArtista(){}
 

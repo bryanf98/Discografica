@@ -30,7 +30,7 @@ public class ListaDeEmpleados {
         catch(Exception e){
             System.out.println("No se pueden mostrar los empleados");
         }
-
+        return "";
     }
 
     private  void leerArchivo() throws IOException {
@@ -57,11 +57,13 @@ public class ListaDeEmpleados {
             //System.out.println(aux.toString());
             int ultimo = aux.size()-1;
             if(aux.get(ultimo).equals("A")){
-               empleado = new Artista( aux.get(3).toString(), aux.get(1).toString(), aux.get(2).toString(), aux.get(4).toString());
+               empleado = new Artista( aux.get(3).toString(), aux.get(1).toString()
+                       , aux.get(2).toString(), aux.get(4).toString(),Integer.parseInt(aux.get(5).toString()));
             }
             else
             {
-                empleado = new NoArtista(aux.get(1).toString(), aux.get(2).toString(), aux.get(3).toString());
+                empleado = new NoArtista(aux.get(1).toString(), aux.get(2).toString(),
+                        aux.get(3).toString(),Integer.parseInt(aux.get(4).toString()));
             }
             this.agregarEmpleado(empleado);
             //System.out.print(listaEmpleados.get(0).toString());
