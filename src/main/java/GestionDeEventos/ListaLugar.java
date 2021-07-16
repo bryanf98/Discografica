@@ -15,7 +15,7 @@ public  class ListaLugar {
     public ArrayList<Fisico> lugarFisico = new ArrayList<Fisico>();
     public ArrayList<PlataformaDigital> lugarDigital = new ArrayList<PlataformaDigital>();
 
-    public ArrayList<Lugar> listaLugares;
+    //public ArrayList<Lugar> listaLugares;
 
     public void agregarLugar(Lugar lugar, String tipo)
     {
@@ -60,21 +60,18 @@ public  class ListaLugar {
 
 
 
-    public  String[] mostrarLugares()
+    public   ArrayList mostrarLugares()
     {
-        String path=  "src/GestionDeEventos/lugares.txt";
-        int numeroDeLugares=conta.contarLineas(path);
-        String[] eventos= new String[numeroDeLugares];
-        int contador =0;
+        String path=  "src/main/java/GestionDeEventos/lugares.txt";
+        ArrayList eventos= new ArrayList();
         File fichero = new File(path);
         Scanner s = null;
         try {
             s = new Scanner(fichero);
             while (s.hasNextLine()) {
-                eventos[contador]=s.nextLine();
-                contador++;
+                eventos.add(s.nextLine());
+                //eventos.get(1).
             }
-
         } catch (Exception ex) {
             System.out.println("Mensaje: " + ex.getMessage());
         } finally {
@@ -166,5 +163,8 @@ public  class ListaLugar {
         return evento;
     }
 
+    /*public static void main(String [] arg) {
+        mostrarLugares();
+    }*/
 
     }

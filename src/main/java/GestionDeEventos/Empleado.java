@@ -7,6 +7,14 @@ public class Empleado{
     String nombreEmpleado;
     String cargo;
     String estadoEmpleado;
+    public Empleado(String nombreEmpleado, String cargo, String estadoEmpleado) {
+        this.nombreEmpleado=nombreEmpleado;
+        this.cargo=cargo;
+        this.estadoEmpleado=estadoEmpleado;
+    }
+
+    public Empleado(){}
+
 
     public String getNombreEmpleado() {
         return nombreEmpleado;
@@ -35,5 +43,6 @@ public class Empleado{
     public void registrarEmpleado(FormularioEmpleados formulario){
 
     }
+
 
 }

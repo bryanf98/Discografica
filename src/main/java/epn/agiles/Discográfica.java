@@ -8,12 +8,21 @@ import java.io.*;
 public class Discográfica {
 
     public static void main(String [] arg) {
+        //Caso de prueba 3 mostrar lugares con empleados
+        ListaLugar lugar = new ListaLugar();
+        lugar.
+
+
+
+
+
+
         //Caso de prueba 1 registrar un empleado
 	//¿El empleado es artista?:"n"
 	//Nombre:"Rick Rubin"
 	//Cargo:"Ingeniero de Sonido"
 
-        Empleado empleado;
+        //Empleado empleado;
         FormularioEmpleados formulario = new FormularioEmpleados();
         formulario.obtenerValores();
         if(formulario.getTipoDeEmpleado().equals("Artista")){

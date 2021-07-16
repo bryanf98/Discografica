@@ -10,6 +10,14 @@ public class Artista extends Empleado{
 
     String generomusical;
 
+    public Artista(String generomusical,String nombreEmpleado, String cargo, String estadoEmpleado) {
+        super(nombreEmpleado,cargo,estadoEmpleado);
+        this.generomusical=generomusical;
+    }
+
+    public Artista(){}
+
+
     public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
 
     public void registrarEmpleado(FormularioEmpleados formulario) {
@@ -61,4 +69,13 @@ public class Artista extends Empleado{
         System.out.println("Empleado Registrado Exitosamente");
     }
 
+    @Override
+    public String toString() {
+        return "Artista{" +
+                "generomusical='" + generomusical + '\'' +
+                ", nombreEmpleado='" + nombreEmpleado + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", estadoEmpleado='" + estadoEmpleado + '\'' +
+                '}';
+    }
 }

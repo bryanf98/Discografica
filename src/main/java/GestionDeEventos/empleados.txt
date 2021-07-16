@@ -1,7 +1,7 @@
-1; COMIC; Artista; Reggaeton; Activo
-2; Tom Yorke; Baterista; Rock; Activo
-3; Budy; Gestor de Redes Sociales; Activo
-4; Jose; Compositor; Activo
-5; Francisco García; Productor Musical; Activo
-6; Luis Vargas; Gerente; Romantico; Activo
-7; Luis Marin; Ingeniero de Sonido; Activo
+1; COMIC; Banda; Reggaeton; Activo;A
+2; Tom Yorke; Baterista; Rock; Activo;A
+3; Budy; Gestor de Redes Sociales; Activo;N
+4; Jose; Compositor; Activo;N
+5; Francisco García; Productor Musical; Activo;N
+6; Luis Vargas; Gerente; Romantico; Activo;A
+7; Luis Marin; Ingeniero de Sonido; Activo;N

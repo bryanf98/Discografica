@@ -9,6 +9,12 @@ import java.util.Scanner;
 
 public class NoArtista extends Empleado{
 
+    public NoArtista(String nombreEmpleado, String cargo, String estadoEmpleado) {
+        super(nombreEmpleado,cargo,estadoEmpleado);
+    }
+    public NoArtista(){}
+
+
     public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
 
     public void registrarEmpleado(FormularioEmpleados formulario) {
@@ -55,5 +61,14 @@ public class NoArtista extends Empleado{
         String data = ((i+1)+ "; " + nombreEmpleado + "; " + cargo + "; " + estadoEmpleado +"\n");
         fw.write(data);
         System.out.println("Empleado Registrado Exitosamente");
+    }
+
+    @Override
+    public String toString() {
+        return "NoArtista{" +
+                "nombreEmpleado='" + nombreEmpleado + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", estadoEmpleado='" + estadoEmpleado + '\'' +
+                '}';
     }
 }

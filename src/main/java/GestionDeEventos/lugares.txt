@@ -1,5 +1,5 @@
-Bar "La Clementina"-Leo Messi-5000
-Quito-Jorge Yunda-1200
-Cuenca-Vladimir Lenin-680
-Loja-Winston Churchil-600
-Moscú-Vladimir Putin-700
+Bar "La Clementina"-1-Leo Messi-5000
+Quito-2-Jorge Yunda-1200
+Cuenca-3-Vladimir Lenin-680
+Loja-4-Winston Churchil-600
+Moscú-5-Vladimir Putin-700

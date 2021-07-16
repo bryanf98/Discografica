@@ -7,4 +7,10 @@ public abstract class Lugar{
 
     public abstract void registrarLugar(int aforo, String direccion, String dueno);
     public abstract void modificarLugar(String lugar, String lugarModificado);
+    public  String mostrarLugar(){
+        String cadenaDeRetorno="" ;
+        cadenaDeRetorno+=nombre;
+        cadenaDeRetorno+=" "+listaDeEmpleados.mostrarEmpleado();
+    return cadenaDeRetorno;
+    }
   }
