@@ -69,6 +69,6 @@ public class NoArtista extends Empleado{
                 "nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
-                '}';
+                "}";
     }
 }

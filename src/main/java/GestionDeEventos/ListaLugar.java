@@ -97,7 +97,7 @@ public  class ListaLugar {
         }
         String lugaresARetornar="";
         for(Lugar lugar:lugares){
-            lugaresARetornar+=" " +lugar.mostrarLugar()+"\n";
+            lugaresARetornar+=" " +lugar.mostrarLugar();
         }
         //return eventos;//este retorno hace la funcionalidad que no cacho
         return lugaresARetornar;

@@ -76,6 +76,6 @@ public class Artista extends Empleado{
                 ", nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
-                '}';
+                "}";
     }
 }

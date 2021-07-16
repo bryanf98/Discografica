@@ -17,13 +17,13 @@ public abstract class Lugar{
     public abstract void registrarLugar(int aforo, String direccion, String dueno);
     public abstract void modificarLugar(String lugar, String lugarModificado);
     public  String mostrarLugar(){
-        String cadenaDeRetorno="" ;
+        String cadenaDeRetorno="\n" ;
         cadenaDeRetorno+=nombre;
         listaDeEmpleados=new ListaDeEmpleados();
         listaDeEmpleados.mostrarEmpleado();
         for(Empleado empleado:listaDeEmpleados.listaEmpleados){
             if(id==empleado.idLugar){
-                cadenaDeRetorno+=" "+ empleado.toString();
+                cadenaDeRetorno+="\n\t"+ empleado.toString();
             }
         }
         return cadenaDeRetorno;
