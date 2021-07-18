@@ -231,6 +231,25 @@ public  class ListaLugar {
         return evento;
     }
 
+    public boolean comprobarArchivo(File archivo) {
+        boolean bandera = false;
+        try {
+            if (archivo.exists()) {
+                System.out.println("El archivo se ha encontrado");
+                bandera = true;
+            }
+        } catch (Exception e) {
+            bandera = false;
+        }
+        return bandera;
+    }
+
+    /*
+    public boolean comprobarArchivo(File archivo) {
+        boolean bandera=false;
+        return bandera;
+    }*/
+
     /*public static void main(String [] arg) {
         mostrarLugares();
     }*/
