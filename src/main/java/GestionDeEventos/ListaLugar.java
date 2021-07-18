@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+
 public  class ListaLugar {
     Tokenizador token = new Tokenizador();
 
@@ -74,8 +75,6 @@ public  class ListaLugar {
             StringTokenizer tokens;
             while (s.hasNextLine()) {
                 lugaresLinea=s.nextLine();
-                //eventos.add(lugaresLinea);//no se que hace esto
-
 
                 //PRIMERA REFACTORIZACION
                 tokens = new StringTokenizer(lugaresLinea, "-");
@@ -91,6 +90,7 @@ public  class ListaLugar {
                 lugares.add(lugar);
                 //addLugarFisico(lugares,aux);
                 //FIN SEGUNDA REFACTORIZACION
+
             }
         } catch (Exception ex) {
             System.out.println("Mensaje: " + ex.getMessage());
@@ -112,7 +112,7 @@ public  class ListaLugar {
         for(Lugar lugar:lugares){
             lugaresARetornar+=" " +lugar.mostrarLugar();
         }
-        //return eventos;//este retorno hace la funcionalidad que no cacho
+
         return lugaresARetornar;
         //FIN CUARTA REFACTORTIZACION
         //return lugaresRetorno(lugares,lugaresARetornar);
@@ -151,7 +151,7 @@ public  class ListaLugar {
         for(Lugar lugar:lugares){
             lugaresARetornar+=" " +lugar.mostrarLugar();
         }
-        //return eventos;//este retorno hace la funcionalidad que no cacho
+
         return lugaresARetornar;
     }
 
