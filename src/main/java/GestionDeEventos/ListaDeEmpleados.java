@@ -82,6 +82,14 @@ public class ListaDeEmpleados {
         return notificacion.notificarSMS(contenido);
     }
 
+    public ArrayList<Empleado> getListaEmpleados() {
+        return listaEmpleados;
+    }
+
+    public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
+        this.listaEmpleados = listaEmpleados;
+    }
+
     /*public static void main(String [] arg) {
         try{
              ListaDeEmpleados lista = new ListaDeEmpleados();
