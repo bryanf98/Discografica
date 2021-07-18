@@ -34,7 +34,7 @@ public class ListaDeEmpleados {
             return cadenaDeRetorno;
         }
         catch(Exception e){
-            //System.out.println("No se pueden mostrar los empleados");
+            System.out.println("No se pueden mostrar los empleados");
         }
         return "";
     }
