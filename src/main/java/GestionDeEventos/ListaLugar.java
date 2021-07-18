@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -137,21 +139,25 @@ public  class ListaLugar {
     }
 
     //REFACTORIZACION 3 EXTRACT METHOD
-    public void cerrarLecturaArchivo(Scanner s){
+    public int cerrarLecturaArchivo(Scanner s){
+        int flag = 0;
         try {
             if (s != null)
                 s.close();
+                flag=1;
         } catch (Exception ex2) {
             System.out.println("Mensaje 2: " + ex2.getMessage());
         }
+        return flag;
     }
+
 
     //REFACTORIZACION 4 EXTRACT METHOD
     public String lugaresRetorno(ArrayList<Lugar> lugares ,String lugaresARetornar ){
         for(Lugar lugar:lugares){
             lugaresARetornar+=" " +lugar.mostrarLugar();
         }
-
+        System.out.println(lugaresARetornar);
         return lugaresARetornar;
     }
 
@@ -244,11 +250,18 @@ public  class ListaLugar {
         return bandera;
     }
 
-    /*
-    public boolean comprobarArchivo(File archivo) {
-        boolean bandera=false;
-        return bandera;
-    }*/
+    public boolean validarFecha(String fecha) {
+        boolean correcto = false;
+        try {
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            formatoFecha.setLenient(false);
+            correcto = true;
+        } catch (Exception e){
+            System.out.println("La fecha es incorrecta");
+        }
+        System.out.println("La fecha es correcta");
+        return correcto;
+    }
 
     /*public static void main(String [] arg) {
         mostrarLugares();
