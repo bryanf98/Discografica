@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Artista extends Empleado{
@@ -18,7 +19,8 @@ public class Artista extends Empleado{
     public Artista(){}
 
 
-    public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
+    public static File fichero_empleados = new File("src/main/java/GestionDeEventos/empleados.txt");
+
 
     public void registrarEmpleado(FormularioEmpleados formulario) {
         this.nombreEmpleado = formulario.nombre;
@@ -28,46 +30,50 @@ public class Artista extends Empleado{
         escribirDatosArtista(nombreEmpleado, estadoEmpleado, cargo, generomusical);
     }
 
-    private static void escribirDatosArtista(String nombre, String estado, String cargo, String genero) {
+    public void escribirDatosArtista(String nombre, String estado, String cargo, String genero) {
         BufferedWriter bw = null;
         FileWriter fw = null;
         try {
             fw = new FileWriter(fichero_empleados.getAbsoluteFile(), true);
             bw = new BufferedWriter(fw);
             ingresarEnArchivo(nombre, estado, cargo, genero, fw);
+            System.out.println("Empleado Registrado Exitosamente");
         } catch (Exception ex) {
             System.out.println("No se puede registrar el empleado");
         } finally {
-            try {
                 cerrarArchivo(bw, fw);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
         }
     }
 
-    private static void cerrarArchivo(BufferedWriter bw, FileWriter fw) throws IOException {
+    private void cerrarArchivo(BufferedWriter bw, FileWriter fw) {
         //Cierra instancias de FileWriter y BufferedWriter
+        try {
         if (bw != null)
             bw.close();
         if (fw != null)
             fw.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
-    private static void ingresarEnArchivo(String nombre, String estado, String cargo, String genero, FileWriter fw) throws IOException {
+    public int ingresarEnArchivo(String nombre, String estado, String cargo, String genero, FileWriter fw) throws IOException {
         //Cuento el número de líneas
+        int mensaje = 0;
         int i = 0;
         try  (Scanner entrada = new Scanner(fichero_empleados)) {
             while (entrada.nextLine()!= null) {
                 i = i+1;
+                mensaje = 1;
             }
         }          catch (Exception e) {
-            System.out.println(e.toString());
+            System.out.println("");
         }
         String data = ((i+1)+ "; " + nombre + "; " + cargo + "; " + genero + "; " + estado +"\n");
         fw.write(data);
-        System.out.println("Empleado Registrado Exitosamente");
+        return mensaje;
     }
+
 
     @Override
     public String toString() {
