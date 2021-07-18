@@ -13,14 +13,14 @@ public class VerificacionDatosDeEvento implements VerificacionDatos{
     @Override
     public boolean verificarCompletitudDatos(String dato) {
 
-        return dato.equals("");
+        return !dato.equals("");
     }
 
     @Override
     public boolean verificarDatos(String dato) {
         Pattern pattern = Pattern.compile("[!¡=@#$%^&*(),.?\":{}|<>]");
         Matcher matcher = pattern.matcher(dato);
-        return  matcher.find();
+        return  !matcher.find();
 
     }
 }

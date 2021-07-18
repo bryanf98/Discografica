@@ -39,7 +39,7 @@ public class FormularioEmpleados {
     }
 
     public FormularioEmpleados() {
-        verificador=new VerificacionDatosDeEmpleado();
+        verificador= new VerificacionDatosDeEmpleado();
     }
 
     public String getNombre() {
