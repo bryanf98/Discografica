@@ -8,7 +8,7 @@ import java.io.*;
 public class Discográfica {
 
     public static void main(String [] arg) {
-        //Caso de prueba 3 mostrar lugares con empleados
+        //Caso de prueba 3: mostrar lugares con empleados
         ListaLugar lugar = new ListaLugar();
         System.out.println(lugar.mostrarLugares());
 

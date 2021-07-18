@@ -5,6 +5,12 @@ import java.io.*;
 
 public class ListaDeEmpleados {
 
+    NotificarSMS notificacion;
+
+    public ListaDeEmpleados(NotificarSMS notificacion){
+        this.notificacion = notificacion;
+    }
+
     public ListaDeEmpleados(){
         listaEmpleados = new ArrayList();
     }
@@ -28,7 +34,7 @@ public class ListaDeEmpleados {
             return cadenaDeRetorno;
         }
         catch(Exception e){
-            System.out.println("No se pueden mostrar los empleados");
+            //System.out.println("No se pueden mostrar los empleados");
         }
         return "";
     }
@@ -70,6 +76,10 @@ public class ListaDeEmpleados {
             //System.out.println(this.listaEmpleados.get(1).toString());
         }
 
+    }
+
+    public boolean notificar(String contenido){
+        return notificacion.notificarSMS(contenido);
     }
 
     /*public static void main(String [] arg) {
