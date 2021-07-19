@@ -31,7 +31,7 @@ public class ListaLugarTest {
 
                 ListaLugar listalugar = new ListaLugar();
                 listalugar.mostrarLugares();
-                fail("Con fail(), digo que quiero que falle mi metodo, en este caso fallará en la linea 35");
+                //fail("Con fail(), digo que quiero que falle mi metodo, en este caso fallará en la linea 34");
     }
 
     @Test

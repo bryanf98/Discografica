@@ -77,49 +77,17 @@ public  class ListaLugar {
             StringTokenizer tokens;
             while (s.hasNextLine()) {
                 lugaresLinea=s.nextLine();
-
-                //PRIMERA REFACTORIZACION
-                tokens = new StringTokenizer(lugaresLinea, "-");
-                ArrayList aux = new ArrayList();
-                while (tokens.hasMoreTokens()) {
-                    aux.add(tokens.nextToken());
-                }
-                //ArrayList aux= tokenizar(lugaresLinea);
-                //FIN PRIMERA
-
-                //SEGUNDA RECTORIZACION
-                Lugar lugar = new Fisico(aux.get(0).toString(),Integer.parseInt(aux.get(1).toString()));
-                lugares.add(lugar);
-                //addLugarFisico(lugares,aux);
-                //FIN SEGUNDA REFACTORIZACION
-
+                ArrayList aux= tokenizar(lugaresLinea);
+                addLugarFisico(lugares,aux);
             }
         } catch (Exception ex) {
             System.out.println("Mensaje: " + ex.getMessage());
         } finally {
-            // Cerramos el fichero tanto si la lectura ha sido correcta o no
-            //INICIO TERCERA REFACTORIZACION
-            try {
-                if (s != null)
-                    s.close();
-            } catch (Exception ex2) {
-                System.out.println("Mensaje 2: " + ex2.getMessage());
-            }
-            //FINAL TERCERA REFACTORIZACION
-            //cerrarLecturaArchivo(s);
+            cerrarLecturaArchivo(s);
         }
         String lugaresARetornar="";
-
-        //INICIO 4 REFACTORIZACION
-        for(Lugar lugar:lugares){
-            lugaresARetornar+=" " +lugar.mostrarLugar();
-        }
-
-        return lugaresARetornar;
-        //FIN CUARTA REFACTORTIZACION
-        //return lugaresRetorno(lugares,lugaresARetornar);
+        return lugaresRetorno(lugares,lugaresARetornar);
     }
-
 
     //REFACTORIZACION 1 EXTRACT METHOD
     public ArrayList tokenizar(String linea)
@@ -137,7 +105,6 @@ public  class ListaLugar {
         Lugar lugar = new Fisico(aux.get(0).toString(),Integer.parseInt(aux.get(1).toString()));
         lugares.add(lugar);
     }
-
     //REFACTORIZACION 3 EXTRACT METHOD
     public int cerrarLecturaArchivo(Scanner s){
         int flag = 0;
@@ -150,14 +117,11 @@ public  class ListaLugar {
         }
         return flag;
     }
-
-
     //REFACTORIZACION 4 EXTRACT METHOD
     public String lugaresRetorno(ArrayList<Lugar> lugares ,String lugaresARetornar ){
         for(Lugar lugar:lugares){
             lugaresARetornar+=" " +lugar.mostrarLugar();
         }
-        System.out.println(lugaresARetornar);
         return lugaresARetornar;
     }
 
