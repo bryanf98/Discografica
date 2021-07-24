@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class LugarTest {
 
     @Test
-    public void mostrarLugar() {
+    public void given_Empleado_when_read_lugar_then_ok() {
         Lugar lugar = new Fisico("Cuenca",2);
         lugar.mostrarLugar();
 
