@@ -15,12 +15,12 @@ public class Calendario {
         eventos.remove(evento);
     }
     public String[] mostrarEventos(){
-        String path = "src/GestionDeEventos/eventos.txt";
+        String path = "src/resources/eventos.txt";
         int numeroDeEventos=conta.contarLineas(path);
         String[] eventos= new String[numeroDeEventos];
         int contador =0;
 
-        File fichero = new File("src/GestionDeEventos/eventos.txt");
+        File fichero = new File("src/resources/eventos.txt");
         Scanner s = null;
         try {
             s = new Scanner(fichero);
@@ -67,7 +67,7 @@ public class Calendario {
     public  void mostrarEventoSegunFecha(String fecha){
 
             boolean encontrado=false;
-            File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\eventos.txt");
+            File inputFile = new File("src/resources/eventos.txt");
             
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(inputFile));

@@ -26,7 +26,7 @@ public class Fisico extends Lugar {
         PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt", true);
+            fichero = new FileWriter("src/resources/lugares.txt", true);
             pw = new PrintWriter(fichero);
             pw.println(lugar);
 
@@ -50,8 +50,8 @@ public class Fisico extends Lugar {
     public void modificarLugar(String lugar, String lugarModificado) {
         String lineaABorrar=lugar;
         boolean encontrado=false;
-        File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt");
-        File outputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugaresModificar.txt");
+        File inputFile = new File("src/resources/lugares.txt");
+        File outputFile = new File("src/resources/lugaresModificar.txt");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -89,8 +89,8 @@ public class Fisico extends Lugar {
 
     public  void copiarLugaresModificados(){
 
-        String sourceFile="F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugaresModificar.txt" ;
-        String destinationFile="F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\lugares.txt";
+        String sourceFile="src/resources/lugaresModificar.txt" ;
+        String destinationFile="src/resources/lugares.txt";
 
         try {
             File inFile = new File(sourceFile);

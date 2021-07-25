@@ -20,7 +20,7 @@ public class Artista extends Empleado{
         this.autorizador=autorizador;
     }
 
-    public static File fichero_empleados = new File("src/main/java/GestionDeEventos/empleados.txt");
+    public static File fichero_empleados = new File("src/resources/empleados.txt");
 
 
     public boolean registrarEmpleado(FormularioEmpleados formulario) {

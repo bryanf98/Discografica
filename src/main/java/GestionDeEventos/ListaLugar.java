@@ -176,7 +176,7 @@ public  class ListaLugar {
     public  ArrayList extraerLugaresOcupadoPorFecha(String fecha)
     {
 
-        File inputFile = new File("src/GestionDeEventos/eventos.txt");
+        File inputFile = new File("src/resources/eventos.txt");
         ArrayList evento= new ArrayList();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));

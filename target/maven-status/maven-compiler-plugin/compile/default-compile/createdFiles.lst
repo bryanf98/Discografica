@@ -1,4 +1,5 @@
 GestionDeEventos\VerificacionDatosDeEmpleado.class
+GestionDeEventos\NotificadorSMS.class
 GestionDeEventos\Evento.class
 GestionDeEventos\Contador.class
 GestionDeEventos\Artista.class
@@ -15,6 +16,6 @@ GestionDeEventos\PlataformaDigital.class
 GestionDeEventos\ListaDeEmpleados.class
 GestionDeEventos\Fecha.class
 GestionDeEventos\FormularioEvento.class
-GestionDeEventos\NotificarSMS.class
 GestionDeEventos\Lugar.class
+GestionDeEventos\AutorizadorDeArtista.class
 GestionDeEventos\Tokenizador.class

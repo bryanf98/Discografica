@@ -16,7 +16,7 @@ public class Discografica {
         ListaLugar lugar = new ListaLugar();
         System.out.println(lugar.mostrarLugares());
 
-
+        System.out.println("|--Fin de la Ejecucion--|");
 
     /*
     //Caso de prueba 1 registrar un empleado

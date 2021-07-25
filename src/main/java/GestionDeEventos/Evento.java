@@ -45,7 +45,7 @@ public class Evento {
         PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter("src/GestionDeEventos/eventos.txt", true);
+            fichero = new FileWriter("src/resources/eventos.txt", true);
             pw = new PrintWriter(fichero);
             pw.println(evento);
 
@@ -69,7 +69,7 @@ public class Evento {
     {
         String evento = fecha1+"-"+direccion+"-"+tipoDeEvento1+"-"+nombre1;
         // Fichero del que queremos leer
-        File fichero = new File("src/GestionDeEventos/eventos.txt");
+        File fichero = new File("src/resources/eventos.txt");
         Scanner s = null;
 
         try {

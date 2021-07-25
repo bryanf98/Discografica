@@ -23,7 +23,7 @@ public class PlataformaDigital extends Lugar {
         PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\plataformas.txt", true);
+            fichero = new FileWriter("src/resources/plataformas.txt", true);
             pw = new PrintWriter(fichero);
             pw.println(lugar);
 
@@ -47,8 +47,8 @@ public class PlataformaDigital extends Lugar {
     public void modificarLugar(String lugar, String lugarModificado) {
         String lineaABorrar=lugar;
         boolean encontrado=false;
-        File inputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\plataformas.txt");
-        File outputFile = new File("F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\plataformasModificar.txt");
+        File inputFile = new File("src/resources/plataformas.txt");
+        File outputFile = new File("src/resources/plataformasModificar.txt");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -86,8 +86,8 @@ public class PlataformaDigital extends Lugar {
 
     public static void copiarLugaresModificados(){
 
-        String sourceFile="F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\plataformasModificar.txt" ;
-        String destinationFile="F:\\Universidad\\6-7\\Metodologias Ágiles\\Discografica\\src\\GestionDeEventos\\plataformas.txt";
+        String sourceFile="src/resources/plataformasModificar.txt" ;
+        String destinationFile="src/resources/plataformas.txt";
 
         try {
             File inFile = new File(sourceFile);
