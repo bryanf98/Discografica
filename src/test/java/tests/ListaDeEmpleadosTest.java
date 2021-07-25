@@ -1,7 +1,7 @@
 package tests;
 
 import GestionDeEventos.ListaDeEmpleados;
-import GestionDeEventos.NotificarSMS;
+import GestionDeEventos.NotificadorSMS;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -11,7 +11,7 @@ public class ListaDeEmpleadosTest {
 
     @Test
     public void give_notificar_when_is_correct_then_ok() {
-        NotificarSMS notificacion = Mockito.mock(NotificarSMS.class);
+        NotificadorSMS notificacion = Mockito.mock(NotificadorSMS.class);
         ListaDeEmpleados lista = new ListaDeEmpleados(notificacion);
         Mockito.when(notificacion.notificarSMS(Mockito.any())).
                 thenReturn(true);
@@ -21,7 +21,7 @@ public class ListaDeEmpleadosTest {
 
     @Test
     public void give_notificar_when_is_wrong_then_error() {
-        NotificarSMS notificacion = Mockito.mock(NotificarSMS.class);
+        NotificadorSMS notificacion = Mockito.mock(NotificadorSMS.class);
         ListaDeEmpleados lista = new ListaDeEmpleados(notificacion);
         Mockito.when(notificacion.notificarSMS(Mockito.any())).
                 thenReturn(false);

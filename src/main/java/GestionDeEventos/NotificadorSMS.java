@@ -1,6 +1,6 @@
 package GestionDeEventos;
 
-public interface NotificarSMS {
+public interface NotificadorSMS {
 
     public boolean notificarSMS(String contenido);
 }

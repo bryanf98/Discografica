@@ -5,9 +5,9 @@ import java.io.*;
 
 public class ListaDeEmpleados {
 
-    NotificarSMS notificacion;
+    NotificadorSMS notificacion;
 
-    public ListaDeEmpleados(NotificarSMS notificacion){
+    public ListaDeEmpleados(NotificadorSMS notificacion){
         this.notificacion = notificacion;
     }
 
@@ -44,8 +44,7 @@ public class ListaDeEmpleados {
         File archivo;
         FileReader fr;
         // Apertura del fichero
-        //archivo = new File ("src/main/java/GestionDeEventos/empleados.txt");
-        archivo = new File ("src/resources/empleados.txt");
+        archivo = new File ("src/main/java/GestionDeEventos/empleados.txt");
         fr = new FileReader (archivo);
         br = new BufferedReader(fr);
 
@@ -64,8 +63,8 @@ public class ListaDeEmpleados {
             //System.out.println(aux.toString());
             int ultimo = aux.size()-1;
             if(aux.get(ultimo).equals("A")){
-               empleado = new Artista( aux.get(3).toString(), aux.get(1).toString()
-                       , aux.get(2).toString(), aux.get(4).toString(),Integer.parseInt(aux.get(5).toString()));
+                empleado = new Artista( aux.get(3).toString(), aux.get(1).toString()
+                        , aux.get(2).toString(), aux.get(4).toString(),Integer.parseInt(aux.get(5).toString()));
             }
             else
             {
@@ -104,3 +103,4 @@ public class ListaDeEmpleados {
     }*/
 
 }
+

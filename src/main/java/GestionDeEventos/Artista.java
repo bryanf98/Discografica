@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Artista extends Empleado{
 
     String generomusical;
+    AutorizadorDeArtista autorizador;
 
     public Artista(String generomusical,String nombreEmpleado, String cargo, String estadoEmpleado,int idLugar) {
         super(nombreEmpleado,cargo,estadoEmpleado,idLugar);
@@ -15,9 +16,11 @@ public class Artista extends Empleado{
 
     public Artista(){}
 
+    public Artista(AutorizadorDeArtista autorizador){
+        this.autorizador=autorizador;
+    }
 
-    public static File fichero_empleados = new File("src/resources/empleados.txt");
-    //public static File fichero_empleados = new File("src/main/java/GestionDeEventos/empleados.txt");
+    public static File fichero_empleados = new File("src/main/java/GestionDeEventos/empleados.txt");
 
 
     public boolean registrarEmpleado(FormularioEmpleados formulario) {
@@ -53,10 +56,10 @@ public class Artista extends Empleado{
     private void cerrarArchivo(BufferedWriter bw, FileWriter fw) {
         //Cierra instancias de FileWriter y BufferedWriter
         try {
-        if (bw != null)
-            bw.close();
-        if (fw != null)
-            fw.close();
+            if (bw != null)
+                bw.close();
+            if (fw != null)
+                fw.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -98,16 +101,16 @@ public class Artista extends Empleado{
 
         return lineas;
     }
-
-
-
-
     public String getGeneromusical() {
         return generomusical;
     }
 
     public void setGeneromusical(String generomusical) {
         this.generomusical = generomusical;
+    }
+
+    public boolean preguntarPorAutorizacion(String contenido){
+        return autorizador.autorizar(contenido);
     }
 
     @Override
