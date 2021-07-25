@@ -1,9 +1,6 @@
 package GestionDeEventos;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -55,27 +52,37 @@ public class NoArtista extends Empleado{
     }
 
     public int ingresarEnArchivoNoArtista(FileWriter fw) throws IOException {
-        //Cuento el número de líneas
-        int i = 1;
-        try {
-            Scanner entrada = new Scanner(fichero_empleados);
-            while (entrada.nextLine()!= null) {
-                if(entrada.hasNextLine()){
-                    i = i+1;
-                }
-                else{
-                    break;
-                }
+
+            try {
+                int numeroDeLineas = contarLineas(fichero_empleados.getPath());
+                String data = ((numeroDeLineas + 1) + ";" + nombreEmpleado + ";" + cargo + ";" + estadoEmpleado + ";" + idLugar + ";" + "N" + "\n");
+                fw.write(data);
+                System.out.println("Empleado Registrado Exitosamente");
+                return 0;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+                return 1;
             }
-            String data = ((i+1)+ ";" + nombreEmpleado + ";" + cargo + ";" + estadoEmpleado + ";"+idLugar+ ";"+"N"+"\n");
-            fw.write(data);
-            System.out.println("Empleado Registrado Exitosamente");
-            return 0;
-        }catch (Exception e) {
-            System.out.println(e.toString());
-            return 1;
+
+
+    }
+
+    public int contarLineas(String path) {
+
+        File documento = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        int lineas=0;
+        try {
+            documento = new File(path);
+            fr = new FileReader(documento);
+            br = new BufferedReader(fr);
+            lineas=(int)br.lines().count();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
+        return lineas;
     }
 
     @Override
