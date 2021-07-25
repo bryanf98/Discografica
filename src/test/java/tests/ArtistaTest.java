@@ -34,19 +34,19 @@ public class ArtistaTest extends Empleado {
     }
 
 
-    /*@Test
+    @Test
     public void registrar_noartista_leer_archivo_then_ok() throws IOException {
         String path="src/main/java/GestionDeEventos/empleados.txt";
         NoArtista noArtista = new NoArtista();
-        noArtista.setNombreEmpleado("Jonny Greenwood");
-        noArtista.setCargo("Productor");
+        noArtista.setNombreEmpleado("Juan Pablo");
+        noArtista.setCargo("Productor de Espectáculos");
         noArtista.setEstadoEmpleado("Activo");
-        noArtista.ingresarEnArchivoNoArtista(new FileWriter("src/main/java/GestionDeEventos/empleados.txt"
-                ,true));
+        noArtista.setIdLugar(5);
+        noArtista.escribirDatosNoArtista();
 
         ListaDeEmpleados lista = new ListaDeEmpleados();
         lista.mostrarEmpleado();
         assertEquals(noArtista.toStringComoArrayList(),
                 lista.getListaEmpleados().get(lista.getListaEmpleados().size()-1).toStringComoArrayList());
-    }*/
+    }
 }

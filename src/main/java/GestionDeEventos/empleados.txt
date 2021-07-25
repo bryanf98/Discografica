@@ -5,10 +5,3 @@
 5;Francisco García;Productor Musical;Activo;2;N
 6;Luis Vargas;Gerente;Romantico;Activo;2;A
 7;Luis Marin;Ingeniero de Sonido;Activo;1;N
-8;Jonny Greenwood;Productor;Todos;Activo;4;A
-9;Jonny Greenwood;Productor;Todos;Activo;4;A
-10;Jonny Greenwood;Productor;Todos;Activo;4;A
-11;Jonny Greenwood;Productor;Todos;Activo;4;A
-12;Jonny Greenwood;Productor;Todos;Activo;4;A
-13;Jonny Greenwood;Productor;Todos;Activo;4;A
-14;Jonny Greenwood;Productor;Todos;Activo;4;A
