@@ -45,6 +45,14 @@ public class Empleado{
 
     public boolean registrarEmpleado(FormularioEmpleados formulario){return true;}
 
+    public int getIdLugar() {
+        return idLugar;
+    }
+
+    public void setIdLugar(int idLugar) {
+        this.idLugar = idLugar;
+    }
+
     public String toStringComoArrayList(){return "";};
 
 }

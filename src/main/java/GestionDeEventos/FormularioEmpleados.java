@@ -45,6 +45,7 @@ public class FormularioEmpleados {
     public FormularioEmpleados(String nombre,String cargo,String estado,String tipoDeEmpleado,String generoMusical,int Lugar) {
         verificador= new VerificacionDatosDeEmpleado();
         this.nombre=nombre;
+        this.cargo=cargo;
         this.estado=estado;
         this.tipoDeEmpleado=tipoDeEmpleado;
         this.generoMusical=generoMusical;

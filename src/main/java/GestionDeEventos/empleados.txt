@@ -4,4 +4,4 @@
 4;Jose;Compositor;Activo;3;N
 5;Francisco García;Productor Musical;Activo;2;N
 6;Luis Vargas;Gerente;Romantico;Activo;2;A
-7;Luis Marin;Ingeniero de Sonido;Activo;1;N8;Rivers Cuomo;null;Surf Rock;Activo
+7;Luis Marin;Ingeniero de Sonido;Activo;1;N

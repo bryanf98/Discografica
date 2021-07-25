@@ -15,7 +15,7 @@ public class NoArtista extends Empleado{
     public NoArtista(){}
 
 
-    public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
+    public static File fichero_empleados = new File("src/main/java/GestionDeEventos/empleados.txt");
 
     public boolean registrarEmpleado(FormularioEmpleados formulario) {
         this.nombreEmpleado = formulario.nombre;
@@ -78,7 +78,8 @@ public class NoArtista extends Empleado{
                 "nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
-                "}";
+                ", idLugar=" + idLugar +
+                '}';
     }
 
     public String toStringComoArrayList() {
@@ -86,6 +87,7 @@ public class NoArtista extends Empleado{
                 "nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
+                ", idLugar=" + idLugar +
                 "]";
     }
 }

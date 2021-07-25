@@ -66,17 +66,24 @@ public class Artista extends Empleado{
     public int ingresarEnArchivo(String nombre, String estado, String cargo, String genero, int lugar,FileWriter fw) throws IOException {
         //Cuento el número de líneas
         int mensaje = 0;
-        int i = 0;
-        try  (Scanner entrada = new Scanner(fichero_empleados)) {
+        int i = 1;
+        try  {
+            Scanner entrada = new Scanner(fichero_empleados);
             while (entrada.nextLine()!= null) {
-                i = i+1;
-                mensaje = 1;
+                if(entrada.hasNextLine()){
+                    i = i+1;
+                    mensaje = 1;
+                }
+                else{
+                    break;
+                }
             }
-        }          catch (Exception e) {
-            System.out.println("");
+            String data = ((i+1)+ ";" + nombre + ";" + cargo + ";" + genero + ";" + estado +";"+idLugar+";"+"A"+"\n");
+            fw.write(data);
+        }catch (Exception e) {
+            System.out.println(e.toString());
+            mensaje=0;
         }
-        String data = ((i+1)+ ";" + nombre + ";" + cargo + ";" + genero + ";" + estado +"\n");
-        fw.write(data);
         return mensaje;
     }
 
@@ -95,14 +102,17 @@ public class Artista extends Empleado{
                 ", nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
-                "}";
+                ", idLugar=" + idLugar +
+                '}';
     }
+
     public String toStringComoArrayList() {
         return "[" +
                 "generomusical='" + generomusical + '\'' +
                 ", nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
+                ", idLugar=" + idLugar +
                 "]";
     }
 
