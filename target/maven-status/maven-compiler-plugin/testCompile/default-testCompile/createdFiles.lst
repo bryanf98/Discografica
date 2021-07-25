@@ -1,0 +1,6 @@
+tests\ArtistaTest.class
+tests\ListaLugarTest.class
+GestionDeEventos\VerificacionDatosDeEmpleadoVerificarTest.class
+tests\ListaDeEmpleadosTest.class
+tests\VerificacionDatosDeEmpleadoTestCompletitud.class
+tests\LugarTest.class

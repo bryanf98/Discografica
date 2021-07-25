@@ -16,10 +16,10 @@ public class LugarTest {
         lugar.mostrarLugar();
 
         ArrayList<Empleado> expected=new ArrayList<Empleado>();
-        expected.add(new Artista(" Rock",
-                " Tom Yorke",
-                " Baterista",
-                " Activo",
+        expected.add(new Artista("Rock",
+                "Tom Yorke",
+                "Baterista",
+                "Activo",
                 2));
         assertEquals(
                 expected.get(0).toString(),

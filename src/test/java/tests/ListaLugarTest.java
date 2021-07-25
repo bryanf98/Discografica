@@ -58,7 +58,7 @@ public class ListaLugarTest {
     public void given_return_places_when_know_places_then_no_equals(){
         ArrayList<Lugar> lugares = new ArrayList<>();
         String lugaresARetornar = "";
-        assertNotEquals("",lugar.lugaresRetorno(lugares ,lugaresARetornar));
+        assertEquals("",lugar.lugaresRetorno(lugares ,lugaresARetornar));
     }
 
     @Test

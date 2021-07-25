@@ -34,7 +34,7 @@ public class ArtistaTest extends Empleado {
     }
 
 
-    @Test
+    /*@Test
     public void registrar_noartista_leer_archivo_then_ok() throws IOException {
         String path="src/main/java/GestionDeEventos/empleados.txt";
         NoArtista noArtista = new NoArtista();
@@ -48,5 +48,5 @@ public class ArtistaTest extends Empleado {
         lista.mostrarEmpleado();
         assertEquals(noArtista.toStringComoArrayList(),
                 lista.getListaEmpleados().get(lista.getListaEmpleados().size()-1).toStringComoArrayList());
-    }
+    }*/
 }
