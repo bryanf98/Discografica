@@ -36,7 +36,7 @@ public class Artista extends Empleado{
         try {
             fw = new FileWriter(fichero_empleados.getAbsoluteFile(), true);
             bw = new BufferedWriter(fw);
-            if(ingresarEnArchivo(nombre, estado, cargo, genero, lugar,fw)==0){
+            if(ingresarEnArchivo(nombre, estado, cargo, genero, lugar,fw)==1){
                 System.out.println("Empleado Registrado Exitosamente");
             }
         } catch (Exception ex) {

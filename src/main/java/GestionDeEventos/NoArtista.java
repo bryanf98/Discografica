@@ -26,13 +26,13 @@ public class NoArtista extends Empleado{
         return false;
     }
 
-    private boolean escribirDatosNoArtista() {
+    public boolean escribirDatosNoArtista() {
         BufferedWriter bw = null;
         FileWriter fw = null;
         try {
             fw = new FileWriter(fichero_empleados.getAbsoluteFile(), true);
             bw = new BufferedWriter(fw);
-            if(ingresarEnArchivoNoArtista(fw)==0){
+            if(ingresarEnArchivoNoArtista(fw)==1){
                 System.out.println("Empleado Registrado Exitosamente");
             }
         } catch (Exception ex) {
@@ -56,12 +56,18 @@ public class NoArtista extends Empleado{
 
     public int ingresarEnArchivoNoArtista(FileWriter fw) throws IOException {
         //Cuento el número de líneas
-        int i = 0;
-        try  (Scanner entrada = new Scanner(fichero_empleados)) {
+        int i = 1;
+        try {
+            Scanner entrada = new Scanner(fichero_empleados);
             while (entrada.nextLine()!= null) {
-                i = i+1;
+                if(entrada.hasNextLine()){
+                    i = i+1;
+                }
+                else{
+                    break;
+                }
             }
-            String data = ((i+1)+ ";" + nombreEmpleado + ";" + cargo + ";" + estadoEmpleado +"\n");
+            String data = ((i+1)+ ";" + nombreEmpleado + ";" + cargo + ";" + estadoEmpleado + ";"+idLugar+ ";"+"N"+"\n");
             fw.write(data);
             System.out.println("Empleado Registrado Exitosamente");
             return 0;
