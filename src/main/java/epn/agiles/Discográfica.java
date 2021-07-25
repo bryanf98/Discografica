@@ -8,18 +8,18 @@ import java.io.*;
 public class Discográfica {
 
     public static void main(String [] arg) {
-        //Caso de prueba 3: mostrar lugares con empleados
+
+        System.out.println("|--Inicio de la Ejecución--|");
+
+
+        //Caso de prueba 3: mostrar lugares con Empleados
         ListaLugar lugar = new ListaLugar();
         System.out.println(lugar.mostrarLugares());
 
-/*
 
 
-        //Caso de prueba 1 registrar un empleado
-	//¿El empleado es artista?:"n"
-	//Nombre:"Rick Rubin"
-	//Cargo:"Ingeniero de Sonido"
-
+    /*
+    //Caso de prueba 1 registrar un empleado
         Empleado empleado;
         FormularioEmpleados formulario = new FormularioEmpleados();
         formulario.obtenerValores();
@@ -33,7 +33,7 @@ public class Discográfica {
         }
 
 
-        //Caso de prueba 2 regisrtar un evento
+        //Caso de prueba 2 registrar un evento
 	//Ingreso de datos:
 	//Fecha: "2021/09/22"
 	//Lugar:"2"
@@ -43,10 +43,8 @@ public class Discográfica {
         FormularioEvento formularioEv = new FormularioEvento();
         formularioEv.obtenerValores();
         evento.crearEvento(formularioEv);
+    */
 
-
-
- */
     }
 
 
