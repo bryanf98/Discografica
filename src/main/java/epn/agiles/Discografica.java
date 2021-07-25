@@ -5,7 +5,7 @@ import jdk.jfr.Event;
 
 import java.io.*;
 
-public class Discográfica {
+public class Discografica {
 
     public static void main(String [] arg) {
 

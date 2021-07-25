@@ -4,8 +4,8 @@ GestionDeEventos\Contador.class
 GestionDeEventos\Artista.class
 GestionDeEventos\Fisico.class
 GestionDeEventos\ListaLugar.class
-epn\agiles\Discográfica.class
 GestionDeEventos\Empleado.class
+epn\agiles\Discografica.class
 GestionDeEventos\Calendario.class
 GestionDeEventos\VerificacionDatos.class
 GestionDeEventos\FormularioEmpleados.class
