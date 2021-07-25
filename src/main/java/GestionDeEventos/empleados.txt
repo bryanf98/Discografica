@@ -7,3 +7,7 @@
 7;Luis Marin;Ingeniero de Sonido;Activo;1;N
 8;Jonny Greenwood;Productor;Todos;Activo;4;A
 9;Jonny Greenwood;Productor;Todos;Activo;4;A
+10;Juan Pablo;Productor de Espectáculos;Activo;5;N
+11;Jonny Greenwood;Productor;Todos;Activo;4;A
+12;Juan Pablo;Productor de Espectáculos;Activo;5;N
+13;Jonny Greenwood;Productor;Todos;Activo;4;A
