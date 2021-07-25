@@ -1,9 +1,6 @@
 package GestionDeEventos;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -51,6 +48,7 @@ public class Artista extends Empleado{
         }
     }
 
+
     private void cerrarArchivo(BufferedWriter bw, FileWriter fw) {
         //Cierra instancias de FileWriter y BufferedWriter
         try {
@@ -64,21 +62,16 @@ public class Artista extends Empleado{
     }
 
     public int ingresarEnArchivo(String nombre, String estado, String cargo, String genero, int lugar,FileWriter fw) throws IOException {
-        //Cuento el número de líneas
         int mensaje = 0;
-        int i = 1;
         try  {
-            Scanner entrada = new Scanner(fichero_empleados);
-            while (entrada.nextLine()!= null) {
-                if(entrada.hasNextLine()){
-                    i = i+1;
-                    mensaje = 1;
-                }
-                else{
-                    break;
-                }
+            int numeroDeLineas=contarLineas(fichero_empleados.getPath());
+            if(numeroDeLineas!=0){
+                mensaje=1;
             }
-            String data = ((i+1)+ ";" + nombre + ";" + cargo + ";" + genero + ";" + estado +";"+idLugar+";"+"A"+"\n");
+            else{
+                mensaje=0;
+            }
+            String data = ((numeroDeLineas+1)+ ";" + nombre + ";" + cargo + ";" + genero + ";" + estado +";"+idLugar+";"+"A"+"\n");
             fw.write(data);
         }catch (Exception e) {
             System.out.println(e.toString());
@@ -86,6 +79,27 @@ public class Artista extends Empleado{
         }
         return mensaje;
     }
+
+    public int contarLineas(String path) {
+
+        File documento = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        int lineas=0;
+        try {
+            documento = new File(path);
+            fr = new FileReader(documento);
+            br = new BufferedReader(fr);
+            lineas=(int)br.lines().count();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lineas;
+    }
+
+
+
 
     public String getGeneromusical() {
         return generomusical;
