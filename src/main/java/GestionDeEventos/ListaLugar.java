@@ -66,7 +66,7 @@ public  class ListaLugar {
     //public   ArrayList mostrarLugares() este es la definicion de la funcionalidad que no sé
     public   String mostrarLugares()
     {
-        String path=  "C:\\Users\\David Morales\\Documents\\GitHub\\Discografica\\src\\main\\java\\GestionDeEventos\\lugares.txt";
+        String path=  "src/main/java/GestionDeEventos/lugares.txt";
         ArrayList eventos= new ArrayList();
         ArrayList<Lugar> lugares= new ArrayList<Lugar>();
         String lugaresLinea= "";

@@ -44,7 +44,7 @@ public class ListaDeEmpleados {
         File archivo;
         FileReader fr;
         // Apertura del fichero
-        archivo = new File ("C:\\Users\\David Morales\\Documents\\GitHub\\Discografica\\src\\main\\java\\GestionDeEventos\\empleados.txt");
+        archivo = new File ("src/main/java/GestionDeEventos/empleados.txt");
         fr = new FileReader (archivo);
         br = new BufferedReader(fr);
 
