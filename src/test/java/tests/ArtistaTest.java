@@ -17,7 +17,8 @@ public class ArtistaTest extends Empleado {
 
     @Test
     public void registrar_artista_leer_archivo_then_ok() throws IOException {
-        String path="src/main/java/GestionDeEventos/empleados.txt";
+        String path="src/resources/empleados.txt";
+        //String path="src/main/java/GestionDeEventos/empleados.txt";
         Artista artista = new Artista();
         artista.setNombreEmpleado("Jonny Greenwood");
         artista.setCargo("Productor");
@@ -36,7 +37,8 @@ public class ArtistaTest extends Empleado {
 
     @Test
     public void registrar_noartista_leer_archivo_then_ok() throws IOException {
-        String path="src/main/java/GestionDeEventos/empleados.txt";
+        String path="src/resources/empleados.txt";
+        //String path="src/main/java/GestionDeEventos/empleados.txt";
         NoArtista noArtista = new NoArtista();
         noArtista.setNombreEmpleado("Juan Pablo");
         noArtista.setCargo("Productor de Espectáculos");

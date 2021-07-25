@@ -63,10 +63,11 @@ public  class ListaLugar {
 
 
 
-    //public   ArrayList mostrarLugares() este es la definicion de la funcionalidad que no sé
+    //public   ArrayList mostrarLugares()
     public   String mostrarLugares()
     {
-        String path=  "src/main/java/GestionDeEventos/lugares.txt";
+        String path=  "src/resources/lugares.txt";
+        //String path=  "src/main/java/GestionDeEventos/lugares.txt";
         ArrayList eventos= new ArrayList();
         ArrayList<Lugar> lugares= new ArrayList<Lugar>();
         String lugaresLinea= "";
@@ -133,7 +134,7 @@ public  class ListaLugar {
         int tamanoOcupados=ocupados.size();
         int contador=0;
         boolean encontrado=false;
-        File inputFile = new File("src/main/java/GestionDeEventos/lugares.txt");
+        File inputFile = new File("src/resources/lugares.txt");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));

@@ -17,8 +17,10 @@ import static org.junit.Assert.*;
 
 public class ListaLugarTest {
 
-    String path = "src/main/java/GestionDeEventos/empleados.txt";
-    String nopath = "src/main/java/GestionDeEventos/empleados1.txt";
+    String path = "src/resources/empleados.txt";
+    String nopath = "src/resources/empleados1.txt";
+    //String path = "src/main/java/GestionDeEventos/empleados.txt";
+    //String nopath = "src/main/java/GestionDeEventos/empleados1.txt";
     ListaLugar lugar = new ListaLugar();
 
     @Test

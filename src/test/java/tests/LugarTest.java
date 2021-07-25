@@ -3,7 +3,6 @@ package tests;
 import GestionDeEventos.*;
 import org.junit.Test;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -15,7 +14,7 @@ public class LugarTest {
         Lugar lugar = new Fisico("Cuenca",2);
         lugar.mostrarLugar();
 
-        ArrayList<Empleado> expected=new ArrayList<Empleado>();
+        ArrayList<Empleado> expected= new ArrayList<>();
         expected.add(new Artista("Rock",
                 "Tom Yorke",
                 "Baterista",

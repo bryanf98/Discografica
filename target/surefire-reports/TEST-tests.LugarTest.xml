@@ -38,7 +38,7 @@
     <property name="os.version" value="10.0"/>
     <property name="user.home" value="C:\Users\David Morales"/>
     <property name="user.timezone" value="America/Guayaquil"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="file.encoding" value="windows-1252"/>
     <property name="java.specification.version" value="16"/>
     <property name="user.name" value="David Morales"/>
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>

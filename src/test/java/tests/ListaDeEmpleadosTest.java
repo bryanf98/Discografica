@@ -3,7 +3,6 @@ package tests;
 import GestionDeEventos.ListaDeEmpleados;
 import GestionDeEventos.NotificarSMS;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.*;

@@ -9,7 +9,7 @@ public class Discografica {
 
     public static void main(String [] arg) {
 
-        System.out.println("|--Inicio de la Ejecución--|");
+        System.out.println("|--Inicio de la Ejecucion--|");
 
 
         //Caso de prueba 3: mostrar lugares con Empleados

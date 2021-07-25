@@ -1,0 +1,9 @@
+1;COMIC;Banda;Reggaeton;Activo;5;A
+2;Tom Yorke;Baterista;Rock;Activo;2;A
+3;Budy;Gestor de Redes Sociales;Activo;4;N
+4;Jose;Compositor;Activo;3;N
+5;Francisco García;Productor Musical;Activo;2;N
+6;Luis Vargas;Gerente;Romantico;Activo;2;A
+7;Luis Marin;Ingeniero de Sonido;Activo;1;N
+8;Juan Pablo;Productor de Espectáculos;Activo;5;N
+9;Jonny Greenwood;Productor;Todos;Activo;4;A
