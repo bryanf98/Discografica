@@ -22,26 +22,32 @@ public class Artista extends Empleado{
     public static File fichero_empleados = new File("src/main/java/GestionDeEventos/empleados.txt");
 
 
-    public void registrarEmpleado(FormularioEmpleados formulario) {
+    public boolean registrarEmpleado(FormularioEmpleados formulario) {
         this.nombreEmpleado = formulario.nombre;
         this.estadoEmpleado = formulario.estado;
         this.cargo = formulario.cargo;
         this.generomusical = formulario.generoMusical;
-        escribirDatosArtista(nombreEmpleado, estadoEmpleado, cargo, generomusical);
+        this.idLugar=formulario.idLugar;
+        if(escribirDatosArtista(nombreEmpleado, estadoEmpleado, cargo, generomusical,idLugar))
+            return true;
+        return false;
     }
 
-    public void escribirDatosArtista(String nombre, String estado, String cargo, String genero) {
+    public boolean escribirDatosArtista(String nombre, String estado, String cargo, String genero,int lugar) {
         BufferedWriter bw = null;
         FileWriter fw = null;
         try {
             fw = new FileWriter(fichero_empleados.getAbsoluteFile(), true);
             bw = new BufferedWriter(fw);
-            ingresarEnArchivo(nombre, estado, cargo, genero, fw);
-            System.out.println("Empleado Registrado Exitosamente");
+            if(ingresarEnArchivo(nombre, estado, cargo, genero, lugar,fw)==0){
+                System.out.println("Empleado Registrado Exitosamente");
+            }
         } catch (Exception ex) {
             System.out.println("No se puede registrar el empleado");
+            return false;
         } finally {
-                cerrarArchivo(bw, fw);
+            cerrarArchivo(bw, fw);
+            return true;
         }
     }
 
@@ -57,7 +63,7 @@ public class Artista extends Empleado{
         }
     }
 
-    public int ingresarEnArchivo(String nombre, String estado, String cargo, String genero, FileWriter fw) throws IOException {
+    public int ingresarEnArchivo(String nombre, String estado, String cargo, String genero, int lugar,FileWriter fw) throws IOException {
         //Cuento el número de líneas
         int mensaje = 0;
         int i = 0;
@@ -69,11 +75,18 @@ public class Artista extends Empleado{
         }          catch (Exception e) {
             System.out.println("");
         }
-        String data = ((i+1)+ "; " + nombre + "; " + cargo + "; " + genero + "; " + estado +"\n");
+        String data = ((i+1)+ ";" + nombre + ";" + cargo + ";" + genero + ";" + estado +"\n");
         fw.write(data);
         return mensaje;
     }
 
+    public String getGeneromusical() {
+        return generomusical;
+    }
+
+    public void setGeneromusical(String generomusical) {
+        this.generomusical = generomusical;
+    }
 
     @Override
     public String toString() {
@@ -84,4 +97,14 @@ public class Artista extends Empleado{
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
                 "}";
     }
+    public String toStringComoArrayList() {
+        return "[" +
+                "generomusical='" + generomusical + '\'' +
+                ", nombreEmpleado='" + nombreEmpleado + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", estadoEmpleado='" + estadoEmpleado + '\'' +
+                "]";
+    }
+
+
 }

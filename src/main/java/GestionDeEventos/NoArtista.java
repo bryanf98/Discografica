@@ -17,27 +17,33 @@ public class NoArtista extends Empleado{
 
     public static File fichero_empleados = new File("src/GestionDeEventos/empleados.txt");
 
-    public void registrarEmpleado(FormularioEmpleados formulario) {
+    public boolean registrarEmpleado(FormularioEmpleados formulario) {
         this.nombreEmpleado = formulario.nombre;
         this.estadoEmpleado = formulario.estado;
         this.cargo = formulario.cargo;
-        escribirDatosNoArtista();
+        if(escribirDatosNoArtista())
+            return true;
+        return false;
     }
 
-    private void escribirDatosNoArtista() {
+    private boolean escribirDatosNoArtista() {
         BufferedWriter bw = null;
         FileWriter fw = null;
         try {
             fw = new FileWriter(fichero_empleados.getAbsoluteFile(), true);
             bw = new BufferedWriter(fw);
-            ingresarEnArchivoNoArtista(fw);
+            if(ingresarEnArchivoNoArtista(fw)==0){
+                System.out.println("Empleado Registrado Exitosamente");
+            }
         } catch (Exception ex) {
             System.out.println("No se puede registrar el empleado");
+            return false;
         } finally {
             try {
                 cerrarArchivosNoArtista(bw, fw);
             } catch (Exception ex) {
                 ex.printStackTrace();}
+            return true;
         }
     }
 
@@ -48,19 +54,22 @@ public class NoArtista extends Empleado{
             fw.close();
     }
 
-    private void ingresarEnArchivoNoArtista(FileWriter fw) throws IOException {
+    public int ingresarEnArchivoNoArtista(FileWriter fw) throws IOException {
         //Cuento el número de líneas
         int i = 0;
         try  (Scanner entrada = new Scanner(fichero_empleados)) {
             while (entrada.nextLine()!= null) {
                 i = i+1;
             }
-        }          catch (Exception e) {
+            String data = ((i+1)+ ";" + nombreEmpleado + ";" + cargo + ";" + estadoEmpleado +"\n");
+            fw.write(data);
+            System.out.println("Empleado Registrado Exitosamente");
+            return 0;
+        }catch (Exception e) {
             System.out.println(e.toString());
+            return 1;
         }
-        String data = ((i+1)+ "; " + nombreEmpleado + "; " + cargo + "; " + estadoEmpleado +"\n");
-        fw.write(data);
-        System.out.println("Empleado Registrado Exitosamente");
+
     }
 
     @Override
@@ -70,5 +79,13 @@ public class NoArtista extends Empleado{
                 ", cargo='" + cargo + '\'' +
                 ", estadoEmpleado='" + estadoEmpleado + '\'' +
                 "}";
+    }
+
+    public String toStringComoArrayList() {
+        return "[" +
+                "nombreEmpleado='" + nombreEmpleado + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", estadoEmpleado='" + estadoEmpleado + '\'' +
+                "]";
     }
 }

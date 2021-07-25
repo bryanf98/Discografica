@@ -8,6 +8,7 @@ public class Empleado{
     String cargo;
     String estadoEmpleado;
     int idLugar;
+
     public Empleado(String nombreEmpleado, String cargo, String estadoEmpleado,int idLugar) {
         this.nombreEmpleado=nombreEmpleado;
         this.cargo=cargo;
@@ -42,9 +43,8 @@ public class Empleado{
         this.estadoEmpleado = estado;
     }
 
-    public void registrarEmpleado(FormularioEmpleados formulario){
+    public boolean registrarEmpleado(FormularioEmpleados formulario){return true;}
 
-    }
-
+    public String toStringComoArrayList(){return "";};
 
 }

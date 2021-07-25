@@ -10,6 +10,7 @@ public class FormularioEmpleados {
     String estado;
     String tipoDeEmpleado;
     String generoMusical;
+    int idLugar;
     VerificacionDatos verificador;
 
     public boolean notificar(String dato){
@@ -40,6 +41,15 @@ public class FormularioEmpleados {
 
     public FormularioEmpleados() {
         verificador= new VerificacionDatosDeEmpleado();
+    }
+    public FormularioEmpleados(String nombre,String cargo,String estado,String tipoDeEmpleado,String generoMusical,int Lugar) {
+        verificador= new VerificacionDatosDeEmpleado();
+        this.nombre=nombre;
+        this.estado=estado;
+        this.tipoDeEmpleado=tipoDeEmpleado;
+        this.generoMusical=generoMusical;
+        this.idLugar=Lugar;
+
     }
 
     public String getNombre() {
